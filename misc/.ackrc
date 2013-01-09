@@ -1,5 +1,6 @@
 # lexically sort filenames
 --sort-files
+--color
 
 --type-add=ruby=rake,haml
 --type-add=vim=vimrc
@@ -10,3 +11,11 @@
 # add types ack doesn't know about
 --type-set=MARKDOWN=md,mkd,markdown
 --type-set=RDOC=rdoc
+
+--ignore-dir=vendor
+--ignore-dir=db/server
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=db/*
+--ignore-dir=doc/*
+--ignore-dir=target
