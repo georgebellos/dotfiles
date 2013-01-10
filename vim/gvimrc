@@ -1,0 +1,15 @@
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :CtrlP<CR>
+  inoremap <D-s> <ESC>:w<CR>i  "insertmode
+  nnoremap <D-s> :w<CR>        "normalmode
+endif
+
+" resize current buffer by +/- 5
+nnoremap <D-left> :vertical resize -5<cr>
+nnoremap <D-down> :resize +5<cr>
+nnoremap <D-up> :resize -5<cr>
+nnoremap <D-right> :vertical resize +5<cr>
+
+set noeb vb t_vb=
+set lines=50 columns=110
