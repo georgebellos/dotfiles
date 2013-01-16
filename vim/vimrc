@@ -34,7 +34,7 @@ Bundle 'scrooloose/nerdtree'
 " Fuzzy file finder
 Bundle 'kien/ctrlp.vim'
 
-" undo managment
+"undo managment
 Bundle 'sjl/gundo.vim'
 
 " Manage Buffers
@@ -42,9 +42,10 @@ Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'niklasb/bufkill.vim'
 
 " Tagbar
-if executable('ctags')
-  Bundle 'majutsushi/tagbar'
-endif
+" there is a problem with vimux and tagbar autotag method
+"if executable('ctags')
+  "Bundle 'majutsushi/tagbar'
+"endif
 
 " Autotag
 "Bundle 'AutoTag'
