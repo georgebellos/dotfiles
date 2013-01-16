@@ -216,7 +216,7 @@ Bundle 'itspriddle/vim-jquery'
 " Html/Css development support
 "-----------------------------
 
-"Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-haml'
 "Bundle 'vim-scripts/HTML-AutoCloseTag'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim'}
 "Bundle 'ap/vim-css-color' "slow down my rails files
