@@ -165,8 +165,6 @@ Bundle 'henrik/vim-ruby-runner'
 " Run Ruby Tests
 Bundle 'skalnik/vim-vroom'
 Bundle 'sunaku/vim-ruby-minitest'
-"Bundle 'bcaccinolo/rspec-vim-folding' " a lot fo problems avoid it
-"sweet-rspec-vim               -> https://github.com/duskhacker/sweet-rspec-vim
 
 " Run Rspec Tests -> use vim-ruby-conque
 "Bundle 'skwp/vim-rspec'
@@ -1024,7 +1022,7 @@ map <silent> <Leader>cl :set cursorline! <CR>
 map <silent> <Leader>cn :set nocursorcolumn nocursorline <CR>
 
 "------------------------------------------------------------------
-"This is how i execute ruby tests in terminal when i code on macvim
+" This is how i execute ruby tests in terminal when i code on macvim
 " see more on this blog post
 "------------------------------------------------------------------
 
