@@ -1,6 +1,6 @@
 [user]
-	name = George Bellos
-	email = georgebellos@me.com
+  name = George Bellos
+  email = georgebellos@me.com
   diff = auto
 [color]
   status = auto
@@ -8,9 +8,9 @@
   ui = auto
   diff = auto
 [diff]
-	tool = vim -d
+  tool = vim -d
 [difftool]
-	prompt = false
+  prompt = false
 [alias]
   last = log -1 HEAD
   co = checkout
@@ -18,37 +18,37 @@
   unstage = reset HEAD --
 [core]
   quotepath = false
-	excludesfile = ~/.global_gitignore
+  excludesfile = ~/.global_gitignore
   attributesfiles = ~/.gitattributes
-	autocrlf = input
+  autocrlf = input
 [push]
   default = current
 [merge]
   summary = true
-	tool = vimdiff
+  tool = vimdiff
 [mergetool]
-	prompt = false
+  prompt = false
 [apply]
   whitespace = fix
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
 
 # http://bitfission.com/blog/2010/07/auto-merge-gemfile-lock.html
 [merge "bundlelock"]
-	name = lock Gemfile
+  name = lock Gemfile
   driver = bundle install
 
 # http://tbaggery.com/2010/10/24/reduce-your-rails-schema-conflicts.html
 [merge "railsschema"]
-	name = newer Rails schema version
-	driver = "ruby -e '\n\
-		system %(git), %(merge-file), %(--marker-size=%L), %(%A), %(%O), %(%B)\n\
-		b = File.read(%(%A))\n\
-		b.sub!(/^<+ .*\\nActiveRecord::Schema\\.define.:version => (\\d+). do\\n=+\\nActiveRecord::Schema\\.define.:version => (\\d+). do\\n>+ .*/) do\n\
-		  %(ActiveRecord::Schema.define(:version => #{[$1, $2].max}) do)\n\
-		end\n\
-		File.open(%(%A), %(w)) {|f| f.write(b)}\n\
-		exit 1 if b.include?(%(<)*%L)'"
+  name = newer Rails schema version
+  driver = "ruby -e '\n\
+    system %(git), %(merge-file), %(--marker-size=%L), %(%A), %(%O), %(%B)\n\
+    b = File.read(%(%A))\n\
+    b.sub!(/^<+ .*\\nActiveRecord::Schema\\.define.:version => (\\d+). do\\n=+\\nActiveRecord::Schema\\.define.:version => (\\d+). do\\n>+ .*/) do\n\
+    %(ActiveRecord::Schema.define(:version => #{[$1, $2].max}) do)\n\
+    end\n\
+    File.open(%(%A), %(w)) {|f| f.write(b)}\n\
+    exit 1 if b.include?(%(<)*%L)'"
 
 # https://gist.github.com/833086
 [url "git@github.com:"]
