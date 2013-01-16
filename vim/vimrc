@@ -963,8 +963,9 @@ let g:sunset_utc_offset = 2 "Athens
 " Vroom
 "-------
 
-"map <Leader>g :VroomRunNearestTest<CR>
-"map <Leader>G :VroomRunTestFile<CR>
+map <Leader>tf :VroomRunNearestTest<CR>
+map <Leader>T :VroomRunTestFile<CR>
+let g:vroom_use_vimux=1
 
 " }}}
 "Functions----------------------------------------------------------------------- {{{
