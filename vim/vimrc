@@ -135,7 +135,7 @@ Bundle 'AndrewRadev/switch.vim'
 Bundle 'tpope/vim-eunuch'
 
 " Tmux support
-Bundle 'benmills/vimux'
+"Bundle 'benmills/vimux'
 
 "}}}
 " Ruby development support----------------------------------------------- {{{
