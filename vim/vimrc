@@ -1086,7 +1086,7 @@ EOF
 function! SearchGoogle()
   :ruby search_google
 endfunction
-map <Leader>ww :call SearchGoogle()<CR><CR>
+map <Leader>we :call SearchGoogle()<CR><CR>
 
 " }}}
 " Programming Languages--------------------------------------------------- {{{
@@ -1118,3 +1118,41 @@ hi NonText guifg=bg guibg=bg
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType ruby,objc,coffee,javascript,scheme,clojure,c,scss,css,html,erb,markdown,haskell,erlang,cpp,java,python,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+
+
+" Documentation via Dash
+" [ ] extract it to a plugin
+
+function! DashDocsSearch()
+  let current_word = '<cword>'
+  :redir => output
+  :set filetype
+ :redir END
+ let match_filetype = matchlist(output, 'filetype=\(\S\+\)')
+ if len(match_filetype) > 1
+   let ftype = match_filetype[1]
+ elseif
+   let ftype = ''
+ endif
+  let command = 'open dash://'.ftype . ":" .current_word
+  call s:execute(command)
+endfunction
+
+function! s:execute(cmd)
+  let cmd = a:cmd
+  if !has("gui_running")
+    silent exe '!'.cmd.' &> /dev/null'
+    exec ':redraw!'
+  else
+    exe '!'.cmd.' &> /dev/null &'
+  endif
+  return v:shell_error
+endfunction
+
+nnoremap <Leader>dc :call DashDocsSearch()<cr><cr>
+
+function! SearchDashDocs()
+  !open dash://<cword>
+endfunction
+
+nnoremap <Leader>dC :call SearchDashDocs()<cr>
