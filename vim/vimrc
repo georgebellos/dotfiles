@@ -252,8 +252,11 @@ Bundle 'chrisbra/Recover.vim'
 " Other Languages Support------------------------------------------------ {{{
 
 "Clojure
-Bundle 'vim-scripts/VimClojure'
+"Bundle 'vim-scripts/VimClojure'
 Bundle 'tpope/vim-foreplay'
+Bundle 'guns/vim-clojure-static'
+Bundle 'guns/paredit'
+Bundle 'kien/rainbow_parentheses.vim'
 
 "Haskell
 "Bundle 'wlangstroth/vim-haskell'
@@ -1106,10 +1109,16 @@ au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
 "-----------------------
 "   Clojure Support
 "------------------------
+
 "clojure rainbow support
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
-let g:vimclojure#WantNailgun = 1
+"let g:vimclojure#HighlightBuiltins = 1
+"let g:vimclojure#ParenRainbow = 1
+"let g:vimclojure#WantNailgun = 1
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 let vimclojure#NailgunClient = "/usr/local/Cellar/vimclojure-nailgun-client/2.3.4/bin/ng"
 
 " }}}
