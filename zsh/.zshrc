@@ -29,12 +29,9 @@ ZSH_THEME="georgebellos"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump brew bundler rvm gem git git-flow github heroku osx pow rails3 redis-cli ruby lein cake cap node npm wakeonlan)
+plugins=(autojump brew bundler rvm gem git git-flow github heroku osx pow rails3 redis-cli ruby lein cake cap node npm wakeonlan )
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-#export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-
-### Added by the Heroku Toolbelt
-#export PATH="/usr/local/heroku/bin:$PATH"
+# disable autocorrection
+unsetopt correct_all
