@@ -67,3 +67,7 @@ doc/
 
 # tags
 tags
+
+# zeus
+custom_plan.rb
+zeus.json
