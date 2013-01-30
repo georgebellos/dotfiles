@@ -8,7 +8,7 @@
   ui = auto
   diff = auto
 [diff]
-  tool = vim -d
+  tool = vimdiff
 [difftool]
   prompt = false
 [alias]
@@ -66,8 +66,8 @@
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
 [difftool "sourcetree"]
-  cmd = "cmd = ksdiff --partial-changeset --relative-path \\\"$MERGED\\\" -- \\\"$LOCAL\\\" \\\"$REMOTE\\\" "
-  path = 
+	cmd = "cmd = ksdiff --partial-changeset --relative-path \\\"$MERGED\\\" -- \\\"$LOCAL\\\" \\\"$REMOTE\\\" "
+	path =
 [mergetool "sourcetree"]
   cmd = "cmd = ksdiff --merge --output \\\"$MERGED\\\" --base \\\"$BASE\\\" -- \\\"$LOCAL\\\" --snapshot \\\"$REMOTE\\\" --snapshot "
   trustExitCode = true
