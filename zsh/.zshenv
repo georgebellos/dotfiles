@@ -14,7 +14,6 @@ export CLASSPATH=$CLASSPATH:/usr/local/bin:/usr/local/Cellar/clojure-contrib/1.2
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-
 CONFIGURE_OPTS=--with-openssl-dir=`brew --prefix openssl`
 
 # autojump support
