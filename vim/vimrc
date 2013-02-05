@@ -161,6 +161,8 @@ Bundle 'tpope/vim-rake'
 " execute ruby files in a buffer
 Bundle 'henrik/vim-ruby-runner'
 
+" execute ruby marked lines textmate style
+Bundle 't9md/vim-ruby-xmpfilter'
 
 " Ruby Testing
 "-------------------------
@@ -348,8 +350,8 @@ call Pl#Theme#RemoveSegment('rvm:string')
 call Pl#Theme#RemoveSegment('rvm:statusline')
 let g:Powerline_stl_path_style = 'filename'
 
-" Cursor and cursorline settings
 
+" Cursor and cursorline settings
 set gcr=n:blinkon0                         " no blinking cursor in normal mode
 set gcr=a:blinkon0                         " stop blinking cursor in all modes
 set cursorline                             " Show cursor line
@@ -406,6 +408,7 @@ set showcmd
 
 set hidden                        " allow buffer switching without saving
 set noea                          " dont resize bufffers automatically
+set isfname+=32    " have a space (ASCII 32) considered as a valid character for a file name
 
 "Folding
 set foldmethod=indent
@@ -946,6 +949,16 @@ if has("gui_macvim")
   let g:RubyRunner_key = '<D-r>'
   let g:RubyRunner_keep_focus_key = '<D-R>'
 end
+
+
+" Run ruby inline
+nmap <buffer> <M-r> <Plug>(xmpfilter-run)
+xmap <buffer> <M-r> <Plug>(xmpfilter-run)
+imap <buffer> <M-r> <Plug>(xmpfilter-run)
+
+nmap <buffer> <M-m> <Plug>(xmpfilter-mark)
+xmap <buffer> <M-m> <Plug>(xmpfilter-mark)
+imap <buffer> <M-m> <Plug>(xmpfilter-mark)
 
 "--------------------------
 " Autoclose Tag
