@@ -137,7 +137,7 @@ Bundle 'AndrewRadev/switch.vim'
 Bundle 'tpope/vim-eunuch'
 
 " Tmux support
-"Bundle 'benmills/vimux'
+Bundle 'benmills/vimux'
 
 "}}}
 " Ruby development support----------------------------------------------- {{{
@@ -539,6 +539,7 @@ map <leader>. :bn<cr>
 :nnoremap <leader>ev :edit $MYVIMRC<cr>
 " source .vimrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
+:nnoremap <leader>sg :source $MYGVIMRC<cr>
 
 " insert new line below and above without entering insert mode
 nnoremap <C-J> m`o<Esc>``
@@ -787,7 +788,7 @@ let g:ctrlp_working_path_mode = 2
 nnoremap <silent> <D-t> :CtrlPMRU<CR>
 
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cassettes',
       \ 'file': '\.exe$\|\.so$\|\.dll$|\DS_Store$'}
 
 " ---------------
@@ -1152,9 +1153,9 @@ nnoremap <Leader>dC :call SearchDashDocs()<cr>
 " text object for ruby blocks
 " http://vimcasts.org/blog/2010/12/a-text-object-for-ruby-blocks/
 " https://github.com/kana/vim-textobj-user
-"if has("autocmd")
-  "filetype indent plugin on
-"endif
+if has("autocmd")
+  filetype indent plugin on
+endif
 runtime macros/matchit.vim      "Also require the matchit.vim
 au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
 "-----------------------
@@ -1180,39 +1181,7 @@ hi NonText guifg=bg guibg=bg
 autocmd FileType ruby,objc,coffee,javascript,scheme,clojure,c,scss,css,html,erb,markdown,haskell,erlang,cpp,java,python,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 
-" Documentation via Dash
-" [ ] extract it to a plugin
-
-function! DashDocsSearch()
-  let current_word = '<cword>'
-  :redir => output
-  :set filetype
- :redir END
- let match_filetype = matchlist(output, 'filetype=\(\S\+\)')
- if len(match_filetype) > 1
-   let ftype = match_filetype[1]
- elseif
-   let ftype = ''
- endif
-  let command = 'open dash://'.ftype . ":" .current_word
-  call s:execute(command)
-endfunction
-
-function! s:execute(cmd)
-  let cmd = a:cmd
-  if !has("gui_running")
-    silent exe '!'.cmd.' &> /dev/null'
-    exec ':redraw!'
-  else
-    exe '!'.cmd.' &> /dev/null &'
-  endif
-  return v:shell_error
-endfunction
-
-nnoremap <Leader>dc :call DashDocsSearch()<cr><cr>
-
-function! SearchDashDocs()
-  !open dash://<cword>
-endfunction
-
-nnoremap <Leader>dC :call SearchDashDocs()<cr>
+" test faster settings
+set notimeout
+set ttimeout
+set timeoutlen=50
