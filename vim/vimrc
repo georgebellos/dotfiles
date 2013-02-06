@@ -252,6 +252,7 @@ Bundle 'eddsteel/vim-lanai'
 "Productivity ----------------------------------------------{{{
 Bundle 'amdt/sunset'
 Bundle 'chrisbra/Recover.vim'
+Bundle 'tangledhelix/vim-octopress'
 " }}}
 " Other Languages Support------------------------------------------------ {{{
 
