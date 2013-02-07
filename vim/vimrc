@@ -200,10 +200,19 @@ Bundle 'tpope/vim-rails'
 "--------------------------
 Bundle 'msanders/cocoa.vim'
 
+Bundle 'eraserhd/vim-ios'
+
+Bundle 'Rip-Rip/clang_complete'
+
+"identation
+Bundle "b4winckler/vim-objc"
+
 " RubyMotion
 Bundle 'rcyrus/snipmate-snippets-rubymotion'
 
 " }}}
+
+
 " Web development support -------------------------------------------------- {{{
 
 " Javascript development support
