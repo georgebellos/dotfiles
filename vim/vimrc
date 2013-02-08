@@ -970,6 +970,11 @@ nmap <buffer> <M-m> <Plug>(xmpfilter-mark)
 xmap <buffer> <M-m> <Plug>(xmpfilter-mark)
 imap <buffer> <M-m> <Plug>(xmpfilter-mark)
 
+" vim-ruby-doc
+let g:ruby_doc_ruby_host = 'http://docs.dev/search/-rubydocs?q='
+let g:ruby_doc_rails_host='http://docs.dev/search/-railsdocs?q='
+
+
 "--------------------------
 " Autoclose Tag
 "---------------------------
