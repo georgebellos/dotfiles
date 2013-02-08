@@ -1176,10 +1176,11 @@ au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
 "let g:vimclojure#ParenRainbow = 1
 "let g:vimclojure#WantNailgun = 1
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
+
 let vimclojure#NailgunClient = "/usr/local/Cellar/vimclojure-nailgun-client/2.3.4/bin/ng"
 
 " }}}
