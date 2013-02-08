@@ -39,7 +39,7 @@ Bundle 'sjl/gundo.vim'
 
 " Manage Buffers
 Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'niklasb/bufkill.vim'
+"Bundle 'niklasb/bufkill.vim'
 
 " Tagbar
 " there is a problem with vimux and tagbar autotag method
@@ -84,7 +84,6 @@ Bundle 'tpope/vim-unimpaired'
 " Select and operate on various types of objects
 Bundle 'vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
-Bundle 'bkad/CamelCaseMotion'
 
 " Commnets
 Bundle 'scrooloose/nerdcommenter'
@@ -1100,7 +1099,7 @@ if !exists("*OpenURI")
     :ruby my_open_uri
   endfunction
 endif
-map <Leader>w :call OpenURI()<CR><CR>
+nnoremap <Leader>wf :call OpenURI()<CR><CR>
 
 
 "---------------------------
@@ -1115,7 +1114,7 @@ EOF
 function! SearchGoogle()
   :ruby search_google
 endfunction
-map <Leader>we :call SearchGoogle()<CR><CR>
+nnoremap <Leader>we :call SearchGoogle()<CR><CR>
 
 " Documentation via Dash
 " [ ] extract it to a plugin
