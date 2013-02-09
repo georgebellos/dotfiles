@@ -67,7 +67,10 @@ endif
 " Editing - Automating--------------------------------------------------{{{
 
 " Syntax checking
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
+
+"changes are on the way to master
+Bundle 'terhechte/syntastic'
 
 " Enhaced motions
 Bundle 'Lokaltog/vim-easymotion'
@@ -110,6 +113,9 @@ Bundle 'tpope/vim-rsi'
 "Bundle 'garbas/vim-snipmate'
 "Bundle 'honza/snipmate-snippets'
 "Bundle 'SirVer/ultisnips'
+"changes will be merge to silver fork
+Bundle 'guns/ultisnips'
+
 "Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neosnippet'
 "Bundle 'cometsong/vim-autocomplpop'
@@ -210,8 +216,6 @@ Bundle "b4winckler/vim-objc"
 Bundle 'rcyrus/snipmate-snippets-rubymotion'
 
 " }}}
-
-
 " Web development support -------------------------------------------------- {{{
 
 " Javascript development support
@@ -861,13 +865,13 @@ map <leader>rt :TagbarToggle<CR>
 
 
 "------------------
-" Synatstic
+" Syntastic
 "------------------
 
+" Show sidebar signs.
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=0
 let g:syntastic_auto_loc_list=2
-
 
 "------------------
 " NERD Tree
@@ -948,7 +952,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 set tags=./.git/tags;./tags;/
 "set tags+=~/.vimtags
 
-
 "---------------
 "Run Ruby files
 "---------------
@@ -1000,6 +1003,34 @@ map <Leader>T :VroomRunTestFile<CR>
 let g:vroom_use_vimux=1
 
 " }}}
+
+" cocoa plugins settings {{{
+
+"clang_complete
+"most stuff taken from here http://appventure.me/2013/01/use-vim-as-xcode-alternative-ios-mac-cocoa.html
+" Disable auto completion, always <c-x> <c-o> to complete
+let g:clang_complete_auto = 0
+let g:clang_use_library = 1
+let g:clang_periodic_quickfix = 0
+let g:clang_close_preview = 1
+
+" For Objective-C, this needs to be active, otherwise multi-parameter methods won't be completed correctly
+let g:clang_snippets = 1
+
+let g:clang_snippets_engine = 'ultisnips'
+
+let g:clang_exec = '/usr/local/bin/clang'
+let g:clang_library_path = '/usr/local/lib/libclang.dylib'
+
+
+" Read the clang complete file
+let g:syntastic_objc_config_file = '.clang_complete'
+
+nnoremap <silent> ` :Errors<CR>
+
+" Tell it to use clang instead of gcc
+let g:syntastic_objc_checker = 'clang'
+"}}}
 "Functions----------------------------------------------------------------------- {{{
 
 " to eixa balei gia to vim-tmux
