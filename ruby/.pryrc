@@ -53,3 +53,14 @@ end
 
 require 'bond'
 Bond.start
+
+# view source on ruby methods
+# http://pragmaticstudio.com/blog/2013/2/13/view-source-ruby-methods
+
+def source_for(object, method)
+  location = object.method(method).source_location
+  `mate #{location[0]} -l #{location[1]}`
+  location
+end
+
+require 'readline'
