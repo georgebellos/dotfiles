@@ -34,3 +34,6 @@ alias fs='foreman start'
 # disable autocorrection on:
 
 alias rspec='nocorrect rspec'
+
+# Git
+alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
