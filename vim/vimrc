@@ -243,6 +243,8 @@ Bundle 'tpope/vim-liquid'
 Bundle 'hallison/vim-markdown'
 "Bundle 'tpope/vim-markdown'
 Bundle "nelstrom/vim-markdown-folding"
+Bundle "skammer/vim-css-color"
+Bundle "cakebaker/scss-syntax.vim"
 " }}}
 " Vim Interface---------------------------------------------------------- {{{
 
@@ -767,6 +769,8 @@ if has("autocmd")
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
         \| exe "normal! g`\"" | endif
+  au BufRead,BufNewFile *.scss             set ft=scss.css
+
 endif
 
 "set filetypes like textmate
@@ -1072,10 +1076,10 @@ command! Bdi :call DeleteInactiveBufs()
 "---------------------
 
 function! CursorPing()
-    set cursorline cursorcolumn
-    redraw
-    sleep 150m
-    set nocursorline nocursorcolumn
+  set cursorline cursorcolumn
+  redraw
+  sleep 150m
+  set nocursorline nocursorcolumn
 endfunction
 
 nmap <leader>sc :call CursorPing()<CR>
