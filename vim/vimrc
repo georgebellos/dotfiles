@@ -18,6 +18,7 @@ endif
 
 "Git on your Vim
 Bundle 'tpope/vim-fugitive'
+Bundle 'kablamo/vim-git-log'
 
 " Create gists
 if executable('curl')
