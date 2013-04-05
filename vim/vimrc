@@ -906,7 +906,7 @@ let NERDTreeKeepTreeInNewTab=1
 
 " bindings
 nnoremap <leader>os :OpenSession<CR>
-
+let g:session_autosave="yes"
 
 "-----------------
 "session directory
@@ -1023,7 +1023,6 @@ let g:clang_snippets_engine = 'ultisnips'
 
 let g:clang_exec = '/usr/local/bin/clang'
 let g:clang_library_path = '/usr/local/lib/libclang.dylib'
-
 
 " Read the clang complete file
 let g:syntastic_objc_config_file = '.clang_complete'
