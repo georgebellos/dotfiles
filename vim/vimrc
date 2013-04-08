@@ -1273,6 +1273,14 @@ autocmd FileType clojure call TurnOnClojureFolding()
 
 let vimclojure#NailgunClient = "/usr/local/Cellar/vimclojure-nailgun-client/2.3.4/bin/ng"
 
+" coffeescript {{{
+
+"Fold by indentation
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+
+"Two-space indentation
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+" }}}
 " }}}
 
 " test faster settings
