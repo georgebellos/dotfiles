@@ -73,8 +73,7 @@ endif
 "Bundle 'scrooloose/syntastic'
 
 "changes are on the way to master
-Bundle 'terhechte/syntastic'
-
+"Bundle 'terhechte/syntastic'
 " Enhaced motions
 Bundle 'Lokaltog/vim-easymotion'
 
