@@ -284,6 +284,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'wlangstroth/vim-haskell'
 
 " }}}
+
 " Documention via dash
 Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
@@ -417,7 +418,6 @@ set autoread                      " Automatically reload changes if detected
 set cf                            " Enable error files & error jumping.
 set clipboard+=unnamed            " Yanks go on clipboard instead.
 set autowrite                     " Writes on make/shell commands
-set timeoutlen=350                " Time to wait for a command (after leader for example)
 set formatoptions=crql
 set iskeyword+=$,@                " Add extra characters that are valid parts of variables
 set showcmd
@@ -445,7 +445,6 @@ set backspace=2                   " Delete everything with backspace
 "set shiftwidth=2                  " Tabs under smart indent
 "set cindent
 set smarttab
-set backspace=2
 
 
 " ---------------
@@ -533,7 +532,17 @@ set wildignore+=*.DS_Store$
 autocmd FileType xml setlocal macmeta              " required for MacVim
 autocmd FileType xml imap <buffer> <M-D-.> </<C-X><C-O>
 
-set timeout timeoutlen=1000 ttimeoutlen=100
+"Fix terminal timeout when pressing escape
+"When you’re pressing Escape to leave insert mode in the terminal, it will by default take a second or another keystroke to leave insert mode completely and update the statusline. If you find this annoying, you can add the following snippet to your vimrc to escape insert mode immediately:
+
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 
 " }}}
 " Mapping ------------------------------------------------------------ {{{
