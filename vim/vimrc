@@ -284,6 +284,10 @@ Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'wlangstroth/vim-haskell'
 
 " }}}
+" Documention via dash
+Bundle 'rizzatti/dash.vim'
+Bundle 'rizzatti/funcoo.vim'
+
 " }}}
 " Vim configuration ------------------------------------------------------- {{{
 " Directories {{{
