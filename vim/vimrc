@@ -111,6 +111,8 @@ Bundle 'kana/vim-textobj-user'
 " Readline mappings insert, command mode
 Bundle 'tpope/vim-rsi'
 
+Bundle 'tpope/vim-dispatch'
+
 " Snippets
 "Bundle 'garbas/vim-snipmate'
 "Bundle 'honza/snipmate-snippets'
