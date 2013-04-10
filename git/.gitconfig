@@ -73,3 +73,5 @@
 	trustExitCode = true
 [github]
 	user = georgebellos
+[pull]
+	rebase = true
