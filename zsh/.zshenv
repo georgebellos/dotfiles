@@ -15,6 +15,9 @@ export LANG=en_US.UTF-8
 
 CONFIGURE_OPTS=--with-openssl-dir=`brew --prefix openssl`
 
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # autojump support
 [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
