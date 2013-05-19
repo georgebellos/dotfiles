@@ -34,6 +34,26 @@ function! GetRubyConqueRspecCommand()
   endif
 endfunction
 
+function! GetRubyConqueRspecOptions()
+  if exists('g:ruby_conque_rspec_options')
+    return g:ruby_conque_rspec_options
+  else
+    return ' --color'
+  endif
+endfunction
+
+function! GetRubyConqueCucumberCommand()
+  if exists('g:ruby_conque_cucumber_runner')
+    return g:ruby_conque_cucumber_runner
+  else
+    if executable('cucumber')
+      return 'cucumber'
+    elseif executable('bundle exec cucumber')
+      return 'bundle exec cucumber'
+    endif
+  endif
+endfunction
+
 " Always deletes any existing instance prior to runing the next one
 function! RunSingleConque(command)
 
@@ -61,19 +81,23 @@ function! RunRubyCurrentFileConque()
 endfunction
 
 function! RunRspecCurrentLineConque()
-  call RunSingleConque(GetRubyConqueRspecCommand() . " " . bufname('%') . " -l "  . line('.') . " --color")
+  call RunSingleConque(GetRubyConqueRspecCommand() . " " . bufname('%') . " -l "  . line('.') . GetRubyConqueRspecOptions())
 endfunction
 
 function! RunRspecCurrentFileConque()
-  call RunSingleConque(GetRubyConqueRspecCommand() . " " . bufname('%') . " --color")
+  call RunSingleConque(GetRubyConqueRspecCommand() . " " . bufname('%') . GetRubyConqueRspecOptions())
+endfunction
+
+function! RunRspecAllFilesConque()
+  call RunSingleConque(g:ruby_conque_rspec_command . " " . "spec" . GetRubyConqueRspecOptions())
 endfunction
 
 function! RunCucumberCurrentLineConque()
-  call RunSingleConque("cucumber" . " " . bufname('%') . ":" . line('.'))
+  call RunSingleConque(GetRubyConqueCucumberCommand() . " " . bufname('%') . ":" . line('.'))
 endfunction
 
 function! RunCucumberCurrentFileConque()
-  call RunSingleConque("cucumber" . " " . bufname('%'))
+  call RunSingleConque(GetRubyConqueCucumberCommand() . " " . bufname('%'))
 endfunction
 
 function! RunRakeConque()
@@ -90,7 +114,7 @@ endfunction
 
 " Requires https://github.com/skwp/vim-spec-finder
 function! RunRspecRelated()
-  call RunSingleConque(GetRubyConqueRspecCommand() . " " . RelatedSpec() . " --color")
+  call RunSingleConque(GetRubyConqueRspecCommand() . " " . RelatedSpec() . GetRubyConqueRspecOptions())
 endfunction
 
 " Get around Conques annoying trapping of input in some kind of strange

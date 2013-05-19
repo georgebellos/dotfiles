@@ -81,7 +81,7 @@ Differences from VimClojure
 Interactive Clojure Development Plugins
 =======================================
 
-### [vim-foreplay](https://github.com/tpope/vim-foreplay)
+### [vim-fireplace](https://github.com/tpope/vim-fireplace)
 
 New nREPL client by Tim Pope.
 
@@ -105,9 +105,6 @@ SWANK client for Vim by Tamas Kovacs.
 Send text to REPLs running in GNU Screen or tmux. Not Clojure specific.
 
 By Eric Van Dewoestine.
-
-Try <https://github.com/guns/screen> for better window handling if you are
-running tmux 1.5 or higher.
 
 ### [vim-slime](https://github.com/jpalardy/vim-slime)
 
