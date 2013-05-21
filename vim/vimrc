@@ -564,6 +564,8 @@ map <leader>. :bn<cr>
 
 " edit .vimrc file
 :nnoremap <leader>ev :edit $MYVIMRC<cr>
+:nnoremap <leader>eg :edit $MYGVIMRC<cr>
+
 " source .vimrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 :nnoremap <leader>sg :source $MYGVIMRC<cr>
@@ -767,7 +769,7 @@ if has("autocmd")
   "endif
 
   " Make sure all mardown files have the correct filetype set and setup wrapping
-  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
+  "au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
 
   " Treat JSON files like JavaScript
   au BufNewFile,BufRead *.json set ft=javascript
