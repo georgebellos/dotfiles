@@ -793,6 +793,7 @@ command! FJ set filetype=javascript
 command! FO set filetype=objc
 command! FH set filetype=haskell
 command! FE set filetype=erlang
+command! EL set filetype=elixir
 command! FM set filetype=markdown
 command! FN set filetype=
 
