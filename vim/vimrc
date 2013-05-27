@@ -1285,6 +1285,9 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
 "Two-space indentation
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
+" run coffee files
+autocmd FileType coffee noremap<D-r> :CoffeeRun<cr>
 " }}}
 " }}}
 
