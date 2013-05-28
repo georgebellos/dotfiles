@@ -815,6 +815,10 @@ endif
 " ----------------------------
 " Ack - Command-Shift-F on OSX
 " ----------------------------
+
+"use with ag
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 map <D-F> :Ack<space>
 map <leader>f :Ack<space>
 
@@ -1278,7 +1282,7 @@ autocmd FileType clojure call TurnOnClojureFolding()
 
 let vimclojure#NailgunClient = "/usr/local/Cellar/vimclojure-nailgun-client/2.3.4/bin/ng"
 
-" coffeescript {{{
+"coffeescript {{{
 
 "Fold by indentation
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent
