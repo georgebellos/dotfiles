@@ -285,6 +285,11 @@ Bundle 'kien/rainbow_parentheses.vim'
 "Haskell
 "Bundle 'wlangstroth/vim-haskell'
 
+"Elixir
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'oscarh/vimerl'
+Bundle 'mattonrails/vim-mix'
+Bundle 'carlosgaldino/elixir-snippets'
 " }}}
 
 " Documention via dash
@@ -792,8 +797,8 @@ command! FCL set filetype=clojure
 command! FJ set filetype=javascript
 command! FO set filetype=objc
 command! FH set filetype=haskell
-command! FE set filetype=erlang
-command! EL set filetype=elixir
+command! FE set filetype=elixir
+command! EL set filetype=erlang
 command! FM set filetype=markdown
 command! FN set filetype=
 
@@ -1292,6 +1297,10 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " run coffee files
 autocmd FileType coffee noremap<D-r> :CoffeeRun<cr>
+" elixir {{{
+
+autocmd FileType elixir noremap<D-r> :!elixir %<cr>
+
 " }}}
 " }}}
 
