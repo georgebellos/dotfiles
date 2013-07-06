@@ -9,6 +9,7 @@
   diff = auto
 [diff]
   tool = vimdiff
+	algorithm = patience
 [difftool]
   prompt = false
 [alias]
@@ -75,3 +76,8 @@
 	user = georgebellos
 [pull]
 	rebase = true
+# http://git-scm.com/2010/03/08/rerere.html
+[rerere]
+	enabled = true
+[credential]
+	helper = osxkeychain
