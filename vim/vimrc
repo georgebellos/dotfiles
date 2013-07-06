@@ -251,7 +251,7 @@ Bundle "cakebaker/scss-syntax.vim"
 " Vim Interface---------------------------------------------------------- {{{
 
 " Fancy status line
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " handle colors easier -> https://github.com/Rykka/colorv.vim
 "Bundle 'Rykka/colorv.vim'
