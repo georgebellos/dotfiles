@@ -240,9 +240,9 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-liquid'
 Bundle 'hallison/vim-markdown'
 "Bundle 'tpope/vim-markdown'
-Bundle "nelstrom/vim-markdown-folding"
-Bundle "skammer/vim-css-color"
-Bundle "cakebaker/scss-syntax.vim"
+Bundle 'nelstrom/vim-markdown-folding'
+"Bundle 'skammer/vim-css-color'
+Bundle 'cakebaker/scss-syntax.vim'
 " }}}
 " Vim Interface---------------------------------------------------------- {{{
 
@@ -264,8 +264,9 @@ Bundle 'eddsteel/vim-lanai'
 
 " }}}
 "Productivity ----------------------------------------------{{{
-Bundle 'amdt/sunset'
-Bundle 'chrisbra/Recover.vim'
+"Bundle 'amdt/sunset'
+"Bundle 'Dinduks/vim-holylight'
+"Bundle 'chrisbra/Recover.vim'
 Bundle 'tangledhelix/vim-octopress'
 Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'itchyny/thumbnail.vim'
@@ -1046,6 +1047,7 @@ let g:vroom_use_vimux=1
 
 "clang_complete
 "most stuff taken from here http://appventure.me/2013/01/use-vim-as-xcode-alternative-ios-mac-cocoa.html
+
 " Disable auto completion, always <c-x> <c-o> to complete
 let g:clang_complete_auto = 0
 let g:clang_use_library = 1
@@ -1144,15 +1146,18 @@ noremap <leader>G :call PathAndLineNum()<CR>
 ruby <<EOF
   def my_open_uri
     re = %r{https?:\/\/[\S]+}
-    vundles_regx = %r{'([\S]+)'}
+    vundles_regx = %r{(\S+)\s'(\S+)'}
     line = VIM::Buffer.current.line
     m = line.match(vundles_regx)
 
     if url = line[re]
       system("open", url)
       VIM::message(url)
-    elsif m
-      system("open", "http://github.com/" + m[1].to_s)
+    elsif m && m[1] == "Bundle"
+      system("open", "http://github.com/" + m[2].to_s)
+      VIM::message(url)
+    elsif m && m[1] == "gem"
+      system("open", "https://rubygems.org/gems/" + m[2].to_s)
       VIM::message(url)
     else
       VIM::message("No URI found in line.")
