@@ -1166,7 +1166,7 @@ noremap <leader>G :call PathAndLineNum()<CR>
 ruby <<EOF
   def my_open_uri
     re = %r{https?:\/\/[\S]+}
-    vundles_regx = %r{(\S+)\s'(\S+)'}
+    vundles_regx = %r{"?(\S+)\s'(\S+)'}
     line = VIM::Buffer.current.line
     m = line.match(vundles_regx)
 
