@@ -18,7 +18,6 @@ endif
 
 "Git on your Vim
 Bundle 'tpope/vim-fugitive'
-Bundle 'kablamo/vim-git-log'
 
 " Create gists
 if executable('curl')
@@ -177,7 +176,7 @@ Bundle 't9md/vim-ruby-xmpfilter'
 
 " Run Ruby Tests
 "Bundle 'skalnik/vim-vroom'
-"Bundle 'sunaku/vim-ruby-minitest'
+Bundle 'sunaku/vim-ruby-minitest'
 
 "Bundle 'rson/vim-conque'
 "Bundle 'skwp/vim-ruby-conque'
