@@ -59,6 +59,8 @@ endif
 
 " Session Managment
 Bundle 'xolox/vim-session'
+Bundle 'xolox/vim-misc'
+Bundle 'mhinz/vim-startify'
 
 " Advanced search with ack -> https://github.com/mileszs/ack.vim
 if executable('ack')
