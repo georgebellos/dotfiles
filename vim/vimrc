@@ -1287,7 +1287,6 @@ autocmd FileType clojure call TurnOnClojureFolding()
 "au Syntax * RainbowParenthesesLoadSquare
 "au Syntax * RainbowParenthesesLoadBraces
 
-let vimclojure#NailgunClient = "/usr/local/Cellar/vimclojure-nailgun-client/2.3.4/bin/ng"
 
 "coffeescript {{{
 
