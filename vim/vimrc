@@ -34,6 +34,7 @@ Bundle 'scrooloose/nerdtree'
 
 " Fuzzy file finder
 Bundle 'kien/ctrlp.vim'
+Bundle 'tacahiroy/ctrlp-funky'
 
 "undo managment
 Bundle 'sjl/gundo.vim'
