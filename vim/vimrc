@@ -158,7 +158,7 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'bootleq/vim-textobj-rubysymbol'
 
 " Rvm support in vim
-Bundle 'tpope/vim-rvm'
+"Bundle 'tpope/vim-rvm'
 
 " Dependencies
 " Bundle 'tpope/vim-bundler'
