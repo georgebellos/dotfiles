@@ -93,6 +93,7 @@ Bundle 'vim-scripts/argtextobj.vim'
 
 " Commnets
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'tomtom/tcomment_vim'
 
 " Enhaced tab
 Bundle 'ervandew/supertab'
