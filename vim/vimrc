@@ -118,10 +118,7 @@ Bundle 'tpope/vim-dispatch'
 " Snippets
 "Bundle 'garbas/vim-snipmate'
 "Bundle 'honza/snipmate-snippets'
-"Bundle 'SirVer/ultisnips'
-"changes will be merge to silver fork
-Bundle 'guns/ultisnips'
-
+Bundle 'SirVer/ultisnips'
 "Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neosnippet'
 "Bundle 'cometsong/vim-autocomplpop'
@@ -134,7 +131,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 "Bundle 'chrisbra/NrrwRgn'
 
 " Increase dates and times
-"Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-speeddating'
 
 " Sudo gui
 "Bundle 'gmarik/sudo-gui.vim'
