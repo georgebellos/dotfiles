@@ -205,15 +205,14 @@ Bundle 'tpope/vim-rails'
 
 " }}}
 " Cocoa development support -------------------------------------------- {{{
-"--------------------------
 Bundle 'msanders/cocoa.vim'
-
 Bundle 'eraserhd/vim-ios'
-
+Bundle 'vim-scripts/a.vim'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'tomtom/templator_vim/'
 
 "identation
-Bundle "b4winckler/vim-objc"
+Bundle 'b4winckler/vim-objc'
 
 " RubyMotion
 Bundle 'rcyrus/snipmate-snippets-rubymotion'
@@ -226,7 +225,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
-"Bundle 'groenewege/vim-less'
 "Bundle 'taxilian/vim-web-indent'
 
 
@@ -582,6 +580,11 @@ nnoremap <C-K> m`O<Esc>``
 map <leader>km :set keymap=greek_utf-8<CR>
 map <leader>kn :set keymap=<CR>
 
+" change directory to documents
+:nnoremap <leader>ia :cd ~/workspace/iawriter<cr>
+
+" change colorscheme to iawriter
+:nnoremap <leader>ic :colorscheme iawriter<cr>
 
 "-------------------------------
 " Janus Mappings
