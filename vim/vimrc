@@ -1223,6 +1223,9 @@ endfunction
 
 nnoremap <Leader>dC :call SearchDashDocs()<cr>
 
+" Dash plugin settings
+nmap <silent> <leader>d <Plug>DashSearch
+nmap <silent> <leader>D <Plug>DashGlobalSearch
 " }}}
 " Programming Languages--------------------------------------------------- {{{
 "-------------------------------------
