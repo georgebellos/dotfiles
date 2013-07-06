@@ -176,11 +176,11 @@ Bundle 't9md/vim-ruby-xmpfilter'
 "-------------------------
 
 " Run Ruby Tests
-Bundle 'skalnik/vim-vroom'
-Bundle 'sunaku/vim-ruby-minitest'
+"Bundle 'skalnik/vim-vroom'
+"Bundle 'sunaku/vim-ruby-minitest'
 
-Bundle 'rson/vim-conque'
-Bundle 'skwp/vim-ruby-conque'
+"Bundle 'rson/vim-conque'
+"Bundle 'skwp/vim-ruby-conque'
 
 " tmux and ruby
 "Bundle 'pgr0ss/vimux-ruby-test'
