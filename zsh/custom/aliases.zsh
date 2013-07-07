@@ -37,3 +37,6 @@ alias rspec='nocorrect rspec'
 
 # Git
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
+
+#
+alias srs='bin/spring rspec spec/'
