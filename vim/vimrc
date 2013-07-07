@@ -1307,6 +1307,20 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " run coffee files
 autocmd FileType coffee noremap<D-r> :CoffeeRun<cr>
+
+"Compile to javascript in a vertical buffer
+let coffee_compile_vert = 1
+
+" }}}
+
+
+"javascript {{{
+
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+" }}}
+
 " elixir {{{
 
 autocmd FileType elixir noremap<D-r> :!elixir %<cr>
