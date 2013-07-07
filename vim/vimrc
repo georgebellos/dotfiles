@@ -117,7 +117,7 @@ Bundle 'tpope/vim-rsi'
 
 Bundle 'tpope/vim-dispatch'
 
-" Snippets
+" Snippets and autocomplete
 "Bundle 'garbas/vim-snipmate'
 "Bundle 'honza/snipmate-snippets'
 Bundle 'SirVer/ultisnips'
@@ -229,7 +229,6 @@ Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 "Bundle 'taxilian/vim-web-indent'
 
-
 "-----------------------------
 " Html/Css development support
 "-----------------------------
@@ -251,6 +250,10 @@ Bundle 'cakebaker/scss-syntax.vim'
 
 " Fancy status line
 "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Bundle 'maciakl/vim-neatstatus'
+
+" Diffs signs
+"Bundle 'tomtom/quickfixsigns_vim'
 
 " handle colors easier -> https://github.com/Rykka/colorv.vim
 "Bundle 'Rykka/colorv.vim'
@@ -269,35 +272,35 @@ Bundle 'eddsteel/vim-lanai'
 "Productivity ----------------------------------------------{{{
 "Bundle 'amdt/sunset'
 "Bundle 'Dinduks/vim-holylight'
-"Bundle 'chrisbra/Recover.vim'
+Bundle 'chrisbra/Recover.vim'
 Bundle 'tangledhelix/vim-octopress'
 Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'itchyny/thumbnail.vim'
+
+" Documention via dash
+Bundle 'rizzatti/dash.vim'
+Bundle 'rizzatti/funcoo.vim'
 " }}}
 " Other Languages Support------------------------------------------------ {{{
-
-"Clojure
-"Bundle 'vim-scripts/VimClojure'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-classpath'
-Bundle 'guns/vim-clojure-static'
-Bundle 'guns/paredit'
-Bundle 'kien/rainbow_parentheses.vim'
-
-"Haskell
-"Bundle 'wlangstroth/vim-haskell'
-
+"
 "Elixir
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'oscarh/vimerl'
 Bundle 'mattonrails/vim-mix'
 Bundle 'carlosgaldino/elixir-snippets'
+
+"Clojure
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'guns/paredit'
+
+"Haskell
+"Bundle 'wlangstroth/vim-haskell'
+
+
 " }}}
-
-" Documention via dash
-Bundle 'rizzatti/dash.vim'
-Bundle 'rizzatti/funcoo.vim'
-
 " }}}
 " Vim configuration ------------------------------------------------------- {{{
 " Directories {{{
@@ -335,7 +338,7 @@ set guifont=Monaco\ for\ Powerline:h12
 if has('gui_running')
   color solarized
 else
-  color Tomorrow-Night
+  color solarized
 endif
 
 
@@ -435,6 +438,8 @@ set hidden                        " allow buffer switching without saving
 set noea                          " dont resize bufffers automatically
 set isfname+=32    " have a space (ASCII 32) considered as a valid character for a file name
 
+au FocusLost * silent! wa         " save when you lose focus
+
 "Folding
 set foldmethod=indent
 set foldlevelstart=99             " Remove folds when you open a file
@@ -444,6 +449,11 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+set nrformats-=octal  "numbers that start with a zero will be considered to be octal
+set shiftround
+set fileformats+=mac
+
 " }}}
 " Text Format {{{
 " ---------------
@@ -454,7 +464,6 @@ set backspace=2                   " Delete everything with backspace
 "set shiftwidth=2                  " Tabs under smart indent
 "set cindent
 set smarttab
-
 
 " ---------------
 " Whitespace
@@ -469,9 +478,7 @@ if exists("g:enable_mvim_shift_arrow")
   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
 endif
 
-
 "set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
-
 
 " ---------------
 " List chars
@@ -481,9 +488,11 @@ set listchars=""                  " Reset the listchars
 set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
 set listchars+=trail:.            " show trailing spaces as dots
 set listchars+=extends:>          " The character to show in the last column when wrap is
-" off and the line continues beyond the right of the screen
+                                  " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
-" off and the line continues beyond the right of the screen
+                                  " off and the line continues beyond the right of the screen
+" Remove trailing whitespaces and ^M chars
+autocmd FileType ruby,objc,objcpp,coffee,javascript,scheme,clojure,c,scss,css,html,eruby,markdown,elixir,haskell,erlang,vimrc,cpp,java,python,xml,yaml,text,txt autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " }}}
 "   Searching  & Completion ----------------------------------------------------- {{{
@@ -591,6 +600,12 @@ map <leader>kn :set keymap=<CR>
 " change colorscheme to iawriter
 :nnoremap <leader>ic :colorscheme iawriter<cr>
 
+" open explorer
+nmap ,, :e.<CR>
+
+map <leader>fi :setlocal foldmethod=indent<cr>
+map <leader>fs :setlocal foldmethod=syntax<cr>
+
 "-------------------------------
 " Janus Mappings
 "-------------------------------
@@ -616,7 +631,7 @@ noremap <leader>L mQgewvu`Q
 nmap <silent> <leader>cd :lcd %:h<CR>
 
 " Create the directory containing the file in the buffer
-nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
+"nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
@@ -992,7 +1007,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 " ctags
 "---------------------------
 set tags=./.git/tags;./tags;/
-"set tags+=~/.vimtags
+set tags+=~/dotfiles/vim/tags/ruby_and_gems
 
 "---------------
 "Run Ruby files
@@ -1020,6 +1035,8 @@ let g:ruby_doc_ruby_host = 'http://docs.dev/search/-rubydocs?q='
 let g:ruby_doc_rails_host='http://docs.dev/search/-railsdocs?q='
 
 
+let g:ruby_path = system('rvm current')
+"
 "--------------------------
 " Autoclose Tag
 "---------------------------
@@ -1045,7 +1062,6 @@ map <Leader>T :VroomRunTestFile<CR>
 let g:vroom_use_vimux=1
 
 " }}}
-
 " cocoa plugins settings {{{
 
 "clang_complete
@@ -1071,7 +1087,8 @@ let g:syntastic_objc_config_file = '.clang_complete'
 nnoremap <silent> ` :Errors<CR>
 
 " Tell it to use clang instead of gcc
-let g:syntastic_objc_checker = 'clang'
+let g:syntastic_objc_compiler = 'clang'
+let g:syntastic_objc_checkers = ['clang']
 "}}}
 "Functions----------------------------------------------------------------------- {{{
 
@@ -1230,11 +1247,23 @@ nnoremap <Leader>dC :call SearchDashDocs()<cr>
 nmap <silent> <leader>d <Plug>DashSearch
 nmap <silent> <leader>D <Plug>DashGlobalSearch
 
+
+" Thumbnail plugin setting
+nnoremap <Leader>m :Thumbnail<cr>
+
+"CtrlPFunky settings
+"Jump to function via ctrlp.vim interface
+
+let g:ctrlp_extensions = ['funky']
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+
+
 " }}}
 " Programming Languages--------------------------------------------------- {{{
-"-------------------------------------
-"          Ruby Support
-"-------------------------------------
+" Ruby {{{
 
 " around block ruby
 " text object for ruby blocks
@@ -1245,14 +1274,9 @@ if has("autocmd")
 endif
 runtime macros/matchit.vim      "Also require the matchit.vim
 au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
-"-----------------------
-"   Clojure Support
-"------------------------
-
-" --------------------------------------------------------------------
-"  Automagic Clojure folding on defn's and defmacro's
-" --------------------------------------------------------------------
-"
+au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_and_gems
+" }}}
+" Clojure {{{
 
 "clojure rainbow support
 let g:vimclojure#HighlightBuiltins = 1
@@ -1263,8 +1287,7 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-
+" }}}
 "coffeescript {{{
 
 "Fold by indentation
@@ -1273,22 +1296,19 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 "Two-space indentation
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
-" run coffee files
+"Run coffee files
 autocmd FileType coffee noremap<D-r> :CoffeeRun<cr>
 
 "Compile to javascript in a vertical buffer
 let coffee_compile_vert = 1
 
 " }}}
-
-
 "javascript {{{
 
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 " }}}
-
 " elixir {{{
 
 autocmd FileType elixir noremap<D-r> :!elixir %<cr>
@@ -1296,7 +1316,4 @@ autocmd FileType elixir noremap<D-r> :!elixir %<cr>
 " }}}
 " }}}
 
-" test faster settings
-set notimeout
-set ttimeout
-set timeoutlen=50
+hi NonText guifg=bg guibg=bg
