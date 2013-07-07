@@ -12,6 +12,9 @@ Bundle 'gmarik/vundle'
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
+
+set shell=/usr/local/bin/zsh
+
 " }}}
 " Plugins via Vundle --------------------------------------------------- {{{
 " Git, Buffers, Undo, Fuzzy file finder-----------------------{{{
@@ -1226,6 +1229,7 @@ nnoremap <Leader>dC :call SearchDashDocs()<cr>
 " Dash plugin settings
 nmap <silent> <leader>d <Plug>DashSearch
 nmap <silent> <leader>D <Plug>DashGlobalSearch
+
 " }}}
 " Programming Languages--------------------------------------------------- {{{
 "-------------------------------------
