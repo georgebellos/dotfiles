@@ -6,7 +6,7 @@ export EDITOR='vim -f'
 export NODE_PATH=/usr/local/lib/node_modules
 
 #For Clojure to detect the contrib libs
-export CLASSPATH=$CLASSPATH:/usr/local/bin:/usr/local/Cellar/clojure/1.4.0/clojure-1.4.0.jar
+export CLASSPATH=$CLASSPATH:/usr/local/bin:/usr/local/Cellar/clojure/1.5.1/clojure-1.5.1.jar
 export CLASSPATH=$CLASSPATH:/usr/local/bin:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
 
 #locale settings need for octopress
