@@ -149,6 +149,8 @@ Bundle 'tpope/vim-eunuch'
 " Tmux support
 Bundle 'benmills/vimux'
 
+" switch panes with c-(hjkl)
+Bundle 'christoomey/vim-tmux-navigator'
 "}}}
 " Ruby development support----------------------------------------------- {{{
 
