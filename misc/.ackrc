@@ -1,21 +1,29 @@
 # lexically sort filenames
 --sort-files
+--follow
 --color
+--group
 
---type-add=ruby=rake,haml
+--type-add=ruby=rake,haml,erb
 --type-add=vim=vimrc
+--type-set=coffee=.coffee
+--type-set=scss=.scss
 --type-add=js=json
-
 --type-set=css=sass
 
-# add types ack doesn't know about
 --type-set=MARKDOWN=md,mkd,markdown
 --type-set=RDOC=rdoc
+--type-set=yaml=.yaml,.yml
 
 --ignore-dir=vendor
 --ignore-dir=db/server
 --ignore-dir=log
+--ignore-dir=spec/fixtures
 --ignore-dir=tmp
 --ignore-dir=db/*
 --ignore-dir=doc/*
 --ignore-dir=target
+--ignore-dir=coverage
+--ignore-dir=spec/fixtures
+--ignore-dir=public
+--ignore-dir=bin
