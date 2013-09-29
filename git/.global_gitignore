@@ -33,7 +33,7 @@ Session.vim
 *.7z
 *.dmg
 *.gz
-*.iso
+v.iso
 *.jar
 *.rar
 *.tar
@@ -59,7 +59,12 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-
+.env
+.powenv
+Procfile.development
+db/seeds.rb
+bin/
+public/uploads
 # YARD artifacts
 .yardoc
 _yardoc
@@ -71,3 +76,4 @@ tags
 # zeus
 custom_plan.rb
 zeus.json
+erd.pdf
