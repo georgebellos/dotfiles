@@ -24,12 +24,12 @@ Bundle 'tpope/vim-fugitive'
 
 " Create gists
 if executable('curl')
-  Bundle 'mattn/gist-vim'
+  "Bundle 'mattn/gist-vim'
 endif
 
-"-------------------------
-" Navigation - Buffers
-"-------------------------
+"--------------------------------
+" Navigation - windows - Buffers
+"--------------------------------
 
 " Sidebar for files
 Bundle 'scrooloose/nerdtree'
@@ -50,8 +50,6 @@ if executable('ctags')
   Bundle 'majutsushi/tagbar'
 endif
 
-" Autotag
-"Bundle 'AutoTag'
 
 " almost a shell
 "Bundle 'ervandew/screen'
