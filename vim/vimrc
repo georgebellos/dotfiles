@@ -36,9 +36,14 @@ Bundle 'scrooloose/nerdtree'
 
 " Fuzzy file finder
 Bundle 'kien/ctrlp.vim'
+
+" Ctrlp extension - replacement for tags"
 Bundle 'tacahiroy/ctrlp-funky'
 
-"undo managment
+" CtrlP extension for fuzzy-search in tag matches
+Bundle 'ivalkeen/vim-ctrlp-tjump'
+
+" Undo managment
 Bundle 'sjl/gundo.vim'
 
 " Manage Buffers
