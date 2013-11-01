@@ -25,7 +25,18 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Macvim does not source .zshrc but .zshenv so i have include the rvm scripts here
-# Rvm support
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Rvm support
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# chruby support
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+
+# use the rubies from rvm
+# RUBIES=(~/.rvm/rubies/*)
+
+# change automatically ruby implementation
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-2.0.0-p247
