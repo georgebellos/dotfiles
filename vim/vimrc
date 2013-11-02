@@ -91,12 +91,18 @@ Bundle 'tpope/vim-surround'
 " end certain structures automatically
 Bundle 'tpope/vim-endwise'
 
-" complementary pairs of mappings
+" Complementary pairs of mappings
 Bundle 'tpope/vim-unimpaired'
 
 " Select and operate on various types of objects
+"  provides a text object based on indentation level
 Bundle 'vim-indent-object'
+
+" provides text object for function arguments
 Bundle 'vim-scripts/argtextobj.vim'
+
+" provides a text object to move by words within a camel or snake-cased word
+Bundle 'bkad/CamelCaseMotion'
 
 " Commnets
 Bundle 'scrooloose/nerdcommenter'
