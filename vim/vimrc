@@ -162,6 +162,7 @@ Bundle 'benmills/vimux'
 
 " switch panes with c-(hjkl)
 Bundle 'christoomey/vim-tmux-navigator'
+
 "}}}
 " Ruby development support----------------------------------------------- {{{
 
@@ -170,67 +171,54 @@ Bundle 'vim-ruby/vim-ruby'
 
 " Ruby vim objects
 Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'bootleq/vim-textobj-rubysymbol'
 
-" Rvm support in vim
-"Bundle 'tpope/vim-rvm'
-
-" Dependencies
-" Bundle 'tpope/vim-bundler'
-
-" similar with rails.vim but for all ruby projects
-Bundle 'tpope/vim-rake'
-
-" execute ruby files in a buffer
+" Execute ruby files in a buffer
 Bundle 'henrik/vim-ruby-runner'
 
-" execute ruby marked lines textmate style
+" Execute ruby code inline :dependent 'gem install rcodetools'
 Bundle 't9md/vim-ruby-xmpfilter'
 
-" Ruby Testing
-"-------------------------
-
-" Run Ruby Tests
-"Bundle 'skalnik/vim-vroom'
+" Minitest syntax & completion
 Bundle 'sunaku/vim-ruby-minitest'
 
-"Bundle 'rson/vim-conque'
-"Bundle 'skwp/vim-ruby-conque'
+" Run minitest with vimux
+Bundle 'pgr0ss/vimux-ruby-test'
+"
+" Run ruby tests writtern with minitest via vimux and vroom
+Bundle 'skalnik/vim-vroom'
 
-" tmux and ruby
-"Bundle 'pgr0ss/vimux-ruby-test'
+" Ruby Documentation via ri tool
+"Bundle 'danchoi/ri.vim'
+
+" Ruby local documentation via browser
+Bundle 'lucapette/vim-ruby-doc'
+
+" Run ruby tests written with rspec
+Bundle 'thoughtbot/vim-rspec'
+
+"Bundle 'skwp/vim-ruby-conque'
 
 " Debugger support
 "Bundle 'astashov/vim-ruby-debugger'
 
-
-" Documentation
-Bundle 'danchoi/ri.vim'
-Bundle 'lucapette/vim-ruby-doc'
-"Bundle 'danchoi/rb_nav'
-
-
 " Refactoring Ruby
-" Bundle 'ecomba/vim-ruby-refactoring'
+ "Bundle 'ecomba/vim-ruby-refactoring'
 
-"--------------------------
+" similar with rails.vim but for all ruby projects
+Bundle 'tpope/vim-rake'
+
 " Rails development support
 "--------------------------
+
+"navigate, syntax, commands
 Bundle 'tpope/vim-rails'
 
-" }}}
-" Cocoa development support -------------------------------------------- {{{
-Bundle 'msanders/cocoa.vim'
-Bundle 'eraserhd/vim-ios'
-Bundle 'vim-scripts/a.vim'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'tomtom/templator_vim/'
+"tail command
+Bundle  'vim-scripts/TailMinusF'
 
-"identation
-Bundle 'b4winckler/vim-objc'
+" :Rpreview
+:command! -bar -nargs=1 OpenURL :!open <args>
 
-" RubyMotion
-Bundle 'rcyrus/snipmate-snippets-rubymotion'
 
 " }}}
 " Web development support -------------------------------------------------- {{{
