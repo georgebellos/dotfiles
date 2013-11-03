@@ -1023,13 +1023,13 @@ end
 
 
 " Run ruby inline
-nmap <buffer> <M-r> <Plug>(xmpfilter-run)
-xmap <buffer> <M-r> <Plug>(xmpfilter-run)
-imap <buffer> <M-r> <Plug>(xmpfilter-run)
+autocmd FileType ruby nmap <buffer> <M-m> <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <M-m> <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <M-m> <Plug>(xmpfilter-mark)
 
-nmap <buffer> <M-m> <Plug>(xmpfilter-mark)
-xmap <buffer> <M-m> <Plug>(xmpfilter-mark)
-imap <buffer> <M-m> <Plug>(xmpfilter-mark)
+autocmd FileType ruby nmap <buffer> <M-r> <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <M-r> <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <M-r> <Plug>(xmpfilter-run)
 
 " vim-ruby-doc
 let g:ruby_doc_ruby_host = 'http://docs.dev/search/-rubydocs?q='
