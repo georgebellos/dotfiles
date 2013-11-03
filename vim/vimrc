@@ -1246,6 +1246,14 @@ nnoremap <Leader>dC :call SearchDashDocs()<cr>
 nmap <silent> <leader>d <Plug>DashSearch
 nmap <silent> <leader>D <Plug>DashGlobalSearch
 
+let g:dash_map = {
+      \ 'ruby'       : 'ruby',
+      \ 'coffee'     : 'coffeescript',
+      \ 'javascript' : 'backbone',
+      \ 'elixir'     : 'elixir',
+      \ 'clojure'    : 'clojure'
+      \ }
+
 
 " Thumbnail plugin setting
 nnoremap <Leader>m :Thumbnail<cr>
