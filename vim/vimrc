@@ -907,10 +907,10 @@ imap <C-F1> <ESC>:GundoToggle<CR>
 " NERD Commenter
 "------------------
 if has("gui_macvim") && has("gui_running")
-  map <D-/> <plug>NERDCommenterToggle<CR>
-  "map <D-/> <plug>NERDCommenterToggle<CR>i
+  map <D-/> <plug>NERDCommenterToggle<CR>j
+  imap <D-/> <Esc><plug>NERDCommenterToggre<CR>ji
 else
-  map <leader>/ <plug>NERDCommenterToggle<CR>
+  map <leader>/ <plug>NERDCommenterToggle<CR>j
   inoremap <leader>/ <Esc><plug>NERDCommenterToggle<CR>i
 endif
 
