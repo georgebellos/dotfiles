@@ -1267,6 +1267,9 @@ nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
+let g:ctrlp_funky_ruby_requires = 1
+let g:ctrlp_funky_ruby_classes = 1
+let g:ctrlp_funky_ruby_modules = 1
 
 " }}}
 " Programming Languages--------------------------------------------------- {{{
