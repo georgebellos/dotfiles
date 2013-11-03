@@ -1058,9 +1058,7 @@ let g:sunset_utc_offset = 2 "Athens
 " Vroom
 "-------
 
-map <Leader>tf :VroomRunNearestTest<CR>
-map <Leader>T :VroomRunTestFile<CR>
-let g:vroom_use_vimux=1
+let g:vroom_use_dispatch=1
 
 " }}}
 " cocoa plugins settings {{{
@@ -1276,6 +1274,50 @@ endif
 runtime macros/matchit.vim      "Also require the matchit.vim
 au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
 au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_and_gems
+" }}}
+" rails helps-----------------------{{{
+
+"projections
+let g:rails_projections = {
+      \ "config/projections.json": {
+      \   "command": "projections"
+      \ },
+      \ "spec/features/*_spec.rb": {
+      \   "command": "feature",
+      \   "template": "require 'spec_helper'\n\nfeature '%h' do\n\nend",
+      \ },
+      \ "config/*.rb": { "command": "config"  },
+      \ "test/factories/*.rb": {
+      \   "command":   "factory",
+      \   "affinity":  "collection",
+      \   "alternate": "app/models/%i.rb",
+      \   "related":   "db/schema.rb#%s",
+      \   "test":      "test/models/%i_test.rb",
+      \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \   "keywords":  "factory sequence"
+      \ },
+      \ "spec/factories/*.rb": {
+      \   "command":   "factory",
+      \   "affinity":  "collection",
+      \   "alternate": "app/models/%i.rb",
+      \   "related":   "db/schema.rb#%s",
+      \   "test":      "spec/models/%i_test.rb",
+      \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \   "keywords":  "factory sequence"
+      \ },
+      \ "app/uploaders/*_uploader.rb": {
+      \   "command": "uploader",
+      \   "template":
+      \   "class %SUploader < CarrierWave::Uploader::Base\nend"
+      \   },
+      \ "app/decorators/*_decorator.rb": {
+      \   "command": "decorator",
+      \   "affinity": "model",
+      \   "test": "spec/decorators/%s_spec.rb",
+      \   "related": "app/models/%s.rb",
+      \   "template": "class %SDecorator < Draper::Decorator\nend"
+      \  }
+      \}
 " }}}
 " Clojure {{{
 
