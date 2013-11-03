@@ -1035,9 +1035,6 @@ imap <buffer> <M-m> <Plug>(xmpfilter-mark)
 let g:ruby_doc_ruby_host = 'http://docs.dev/search/-rubydocs?q='
 let g:ruby_doc_rails_host='http://docs.dev/search/-railsdocs?q='
 
-
-let g:ruby_path = system('rvm current')
-"
 "--------------------------
 " Autoclose Tag
 "---------------------------
