@@ -270,6 +270,7 @@ Bundle 'jpo/vim-railscasts-theme'
 Bundle 'spf13/vim-colors'
 "Bundle 'flazz/vim-colorschemes'
 Bundle 'eddsteel/vim-lanai'
+"Bundle 'noahfrederick/vim-hemisu'
 
 " }}}
 "Productivity ----------------------------------------------{{{
