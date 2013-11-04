@@ -106,10 +106,8 @@ Bundle 'bkad/CamelCaseMotion'
 
 " Commnets
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'tomtom/tcomment_vim'
-
-" Enhaced tab
-Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-commentary'
+"Bundle 'tomtom/tcomment_vim'
 
 " Enhaced Repeat Command
 Bundle 'tpope/vim-repeat'
