@@ -219,7 +219,23 @@ Bundle  'vim-scripts/TailMinusF'
 
 
 " }}}
-" Web development support -------------------------------------------------- {{{
+"Elixir & Erlang development support {{{
+
+" Elixir syntax,indent,compiler,filetype
+Bundle 'elixir-lang/vim-elixir'
+
+" mix tasks from vim
+Bundle 'mattonrails/vim-mix'
+
+" Erlang http://blog.erlware.org/2013/09/09/how-to-use-vim-for-erlang-development/
+"Bundle 'oscarh/vimerl'
+
+"more ...
+" https://github.com/vim-erlang
+"replace above identation
+"Bundle 'hcs42/vim-erlang-runtime'
+
+"}}}
 
 " Javascript development support
 Bundle 'kchmck/vim-coffee-script'
@@ -284,13 +300,6 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 " }}}
 " Other Languages Support------------------------------------------------ {{{
-"
-"Elixir
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'oscarh/vimerl'
-Bundle 'mattonrails/vim-mix'
-Bundle 'carlosgaldino/elixir-snippets'
-
 "Clojure
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
