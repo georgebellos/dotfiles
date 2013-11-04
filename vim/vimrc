@@ -252,6 +252,8 @@ Bundle 'cakebaker/scss-syntax.vim'
 " Fancy status line
 "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Bundle 'maciakl/vim-neatstatus'
+Bundle 'bling/vim-airline'
+
 
 " Diffs signs
 "Bundle 'tomtom/quickfixsigns_vim'
@@ -860,6 +862,23 @@ nnoremap <silent> <D-t> :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cassettes',
       \ 'file': '\.exe$\|\.so$\|\.dll$|\DS_Store$'}
+
+"------------------
+" airline settings
+"------------------
+
+" remove separators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
+" set second section to filename
+let g:airline_section_c="%t"
+
+" empty fourth section
+"let g:airline_section_c=""
+let g:airline_section_x=""
+ "put filetype in fifth section
+let g:airline_section_y="%Y"
 
 " ---------------
 "    Fugitive
