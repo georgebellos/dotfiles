@@ -236,8 +236,28 @@ Bundle 'mattonrails/vim-mix'
 "Bundle 'hcs42/vim-erlang-runtime'
 
 "}}}
+"Clojure development support {{{
 
-" Javascript development support
+" clojure repl,comletion, documentation, code navigation
+Bundle 'tpope/vim-fireplace'
+
+"Because the class path is oh-so-expensive to retrieve, "classpath.vim caches it
+"in ~/.cache/vim/classpath. The cache is expired when the timestamp on project.
+" "clj or pom.xml changes.
+Bundle 'tpope/vim-classpath'
+
+" syntax, indent, and filetype settings for Clojure and ClojureScript files.
+Bundle 'guns/vim-clojure-static'
+
+"colored parenthesis, brackets etc
+Bundle 'kien/rainbow_parentheses.vim'
+
+"clojure folding
+Bundle 'gberenfield/cljfold.vim'
+let g:clojure_foldwords = "def,ns,deftest,"
+
+Bundle 'guns/paredit'
+"}}}
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'leshill/vim-json'
@@ -300,13 +320,6 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 " }}}
 " Other Languages Support------------------------------------------------ {{{
-"Clojure
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-classpath'
-Bundle 'guns/vim-clojure-static'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'guns/paredit'
-
 "Haskell
 "Bundle 'wlangstroth/vim-haskell'
 
