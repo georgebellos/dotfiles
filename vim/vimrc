@@ -172,7 +172,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tomtom/tlib_vim'
 
 " Code Substitution
-Bundle 'AndrewRadev/switch.vim'
+" Bundle 'AndrewRadev/switch.vim'
 
 " shell support
 Bundle 'tpope/vim-eunuch'
