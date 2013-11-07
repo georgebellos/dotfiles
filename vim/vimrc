@@ -277,15 +277,43 @@ let g:clojure_foldwords = "def,ns,deftest,"
 
 Bundle 'guns/paredit'
 "}}}
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
-Bundle 'leshill/vim-json'
-Bundle 'itspriddle/vim-jquery'
-"Bundle 'taxilian/vim-web-indent'
+" coffeescript & Javascript development " support--------------------------{{{
 
-"-----------------------------
-" Html/Css development support
-"-----------------------------
+" Syntax
+Bundle 'kchmck/vim-coffee-script'
+
+" Browse code base
+Bundle 'clvv/a.vim'
+
+" Literate programming support:syntax highlighting and indentation
+Bundle 'mintplant/vim-literate-coffeescript'
+
+" coffee text objects
+Bundle 'AndrewRadev/coffee_tools.vim'
+
+" Syntax highlighting for json
+Bundle 'leshill/vim-json'
+
+" Syntax
+Bundle 'pangloss/vim-javascript'
+
+"Enhanced JavaScript Syntax
+Bundle 'jelera/vim-javascript-syntax'
+
+"mustache and handlebars mode for vim
+Bundle 'mustache/vim-mode'
+
+" documentation etc
+"Bundle 'marijnh/tern_for_vim'
+
+"Vim syntax file to add some colorations for jQuery keywords and css selector
+Bundle 'itspriddle/vim-jquery'
+
+"Browse jquery docs api
+Bundle 'lucapette/vim-jquery-doc'
+
+Bundle 'taxilian/vim-web-indent'
+"}}}
 
 Bundle 'tpope/vim-haml'
 "Bundle 'vim-scripts/HTML-AutoCloseTag'
