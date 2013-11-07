@@ -126,14 +126,33 @@ Bundle 'tpope/vim-rsi'
 
 Bundle 'tpope/vim-dispatch'
 
-" Snippets and autocomplete
-"Bundle 'garbas/vim-snipmate'
-"Bundle 'honza/snipmate-snippets'
-Bundle 'SirVer/ultisnips'
-"Bundle 'Shougo/neocomplcache'
+" autocompletion
+"Bundle 'Shougo/neocomplcache.vim'
+"Bundle 'othree/vim-autocomplpop'
+"Bundle 'vim-scripts/L9'
+
+Bundle 'ervandew/supertab'
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "context"
+
+"snippets files for various programming languages
+Bundle 'honza/vim-snippets'
+
+" snippets engine most popular oldest solution
+Bundle 'garbas/vim-snipmate'
+
+" problems on start but this is a better engine
+"Bundle 'SirVer/ultisnips'
+
+" problems not working
+"Bundle 'MarcWeber/ultisnips'
+
+"let g:UltiSnipsUsePythonVersion = 2
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 "Bundle 'Shougo/neosnippet'
-"Bundle 'cometsong/vim-autocomplpop'
-"Bundle 'L9'
 
 " interpret a file by function and cache file automatically
 Bundle 'MarcWeber/vim-addon-mw-utils'
