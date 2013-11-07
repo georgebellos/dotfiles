@@ -118,6 +118,9 @@ Bundle 'tpope/vim-repeat'
 " Extended matching with %
 Bundle 'edsono/vim-matchit'
 
+" Bundle 'Raimondi/delimitMate'
+"imap <C-c> <CR><Esc>O
+
 " Support writing user-defined text objects
 Bundle 'kana/vim-textobj-user'
 
