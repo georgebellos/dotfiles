@@ -314,16 +314,40 @@ Bundle 'lucapette/vim-jquery-doc'
 
 Bundle 'taxilian/vim-web-indent'
 "}}}
+" Html/Css development support "  -------------------------------------------------- {{{
 
-Bundle 'tpope/vim-haml'
+"sass syntax highlighting
+Bundle 'cakebaker/scss-syntax.vim'
+
+"markdown support
+"Bundle 'plasticboy/vim-markdown'
+"Bundle 'tpope/vim-markdown'
+Bundle 'nelstrom/vim-markdown-folding'
+
+"liquid templates support
+Bundle 'tpope/vim-liquid'
+
+"haml templates support
+"Bundle 'tpope/vim-haml'
+
+"advanced abrevvations etc more here http://emmet.io
+"Bundle 'mattn/emmet-vim'
+
+"SASS and Compass Snippets for Vim's Snipmate Plugin
+Bundle 'kwaledesign/scss-snippets'
+
+"hexadecimal CSS colorcodes with their real color
+Bundle 'skammer/vim-css-color'
+"Bundle 'ap/vim-css-color' "slow down my rails files
+
+"checkout
+
 "Bundle 'vim-scripts/HTML-AutoCloseTag'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim'}
-"Bundle 'ap/vim-css-color' "slow down my rails files
-"Bundle 'mattn/zencoding-vim'
 "Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-Bundle 'tpope/vim-liquid'
-Bundle 'hallison/vim-markdown'
-"Bundle 'tpope/vim-markdown'
+"Bundle 'hallison/vim-markdown'
+
+"}}}
 Bundle 'nelstrom/vim-markdown-folding'
 "Bundle 'skammer/vim-css-color'
 Bundle 'cakebaker/scss-syntax.vim'
