@@ -384,28 +384,36 @@ let g:signify_disable_by_default = 1
 let g:signify_mapping_toggle = '<leader>st'
 let g:signify_mapping_next_hunk = '<leader>gj'
 let g:signify_mapping_prev_hunk = '<leader>gk'
+
 " handle colors easier -> https://github.com/Rykka/colorv.vim
 "Bundle 'Rykka/colorv.vim'
 
+" needed for fetching schemes online.
+"Bundle 'mattn/webapi-vim'
+
+" visual indent
+"Bundle 'nathanaelkane/vim-indent-guides'
+
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'wgibbs/vim-irblack'
-Bundle 'sjl/badwolf'
-Bundle 'tomasr/molokai'
-Bundle 'jpo/vim-railscasts-theme'
-Bundle 'spf13/vim-colors'
+"Bundle 'wgibbs/vim-irblack'
+"Bundle 'sjl/badwolf'
+"Bundle 'tomasr/molokai'
+"Bundle 'jpo/vim-railscasts-theme'
+"Bundle 'spf13/vim-colors'
 "Bundle 'flazz/vim-colorschemes'
-Bundle 'eddsteel/vim-lanai'
+"Bundle 'eddsteel/vim-lanai'
 "Bundle 'noahfrederick/vim-hemisu'
 
 " }}}
 "Productivity ----------------------------------------------{{{
 "Bundle 'amdt/sunset'
 "Bundle 'Dinduks/vim-holylight'
-Bundle 'chrisbra/Recover.vim'
+"Bundle 'chrisbra/Recover.vim'
 Bundle 'tangledhelix/vim-octopress'
-Bundle 'beloglazov/vim-online-thesaurus'
+"Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'itchyny/thumbnail.vim'
+Bundle 'chrisbra/DistractFree'
 
 " Documention via dash
 Bundle 'rizzatti/dash.vim'
@@ -414,7 +422,6 @@ Bundle 'rizzatti/funcoo.vim'
 " Other Languages Support------------------------------------------------ {{{
 "Haskell
 "Bundle 'wlangstroth/vim-haskell'
-
 
 " }}}
 " }}}
