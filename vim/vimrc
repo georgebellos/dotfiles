@@ -351,10 +351,6 @@ Bundle 'skammer/vim-css-color'
 "Bundle 'hallison/vim-markdown'
 
 "}}}
-Bundle 'nelstrom/vim-markdown-folding'
-"Bundle 'skammer/vim-css-color'
-Bundle 'cakebaker/scss-syntax.vim'
-" }}}
 " Vim Interface---------------------------------------------------------- {{{
 
 " Fancy status line
@@ -362,10 +358,32 @@ Bundle 'cakebaker/scss-syntax.vim'
 "Bundle 'maciakl/vim-neatstatus'
 Bundle 'bling/vim-airline'
 
+"Keep layout
+"Bundle 'moll/vim-bbye'
 
 " Diffs signs
+" disable on start and then toggle on off
 "Bundle 'tomtom/quickfixsigns_vim'
 
+" problem when saving. it stops for a second to update gutter find a way to
+" disable this"
+"Bundle 'airblade/vim-gitgutter'
+"let g:gitgutter_enabled = 0
+"let g:gitgutter_realtime = 0
+"let g:gitgutter_eager = 0
+"let g:gitgutter_escape_grep = 1
+"nmap <leader>st ::GitGutterToggle<cr>
+
+
+Bundle 'mhinz/vim-signify'
+"works with other vcs but it make slow when you open a file, it can show color
+"inline not just signs - with these setting it is not slow
+let g:signify_vcs_list=['git']
+let g:signify_skip_filetype = { 'txt': 1 }
+let g:signify_disable_by_default = 1
+let g:signify_mapping_toggle = '<leader>st'
+let g:signify_mapping_next_hunk = '<leader>gj'
+let g:signify_mapping_prev_hunk = '<leader>gk'
 " handle colors easier -> https://github.com/Rykka/colorv.vim
 "Bundle 'Rykka/colorv.vim'
 
