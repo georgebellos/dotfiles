@@ -455,9 +455,7 @@ set thesaurus+=~/.vim/thesaurus/roget13a.txt
 "  Colorscheme
 " ---------------
 
-"set guifont=Monaco:h12
 set guifont=Monaco\ for\ Powerline:h12
-"set guifont=Consolas+for+powerline:h12
 if has('gui_running')
   color solarized
 else
@@ -471,7 +469,7 @@ set synmaxcol=120                 " Prevent lag on long lines (default: 3000)
 set ruler                         " Ruler on
 set nu                            " Line numbers on
 set wrap
-
+set linespace=0
 "Color the 80th column differently
 "if exists('+colorcolumn')
   "set colorcolumn=80
