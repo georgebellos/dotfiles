@@ -702,12 +702,13 @@ map <leader>. :bn<cr>
 :nnoremap <leader>sg :source $MYGVIMRC<cr>
 
 " insert new line below and above without entering insert mode
-nnoremap <C-J> m`o<Esc>``
-nnoremap <C-K> m`O<Esc>``
+nnoremap <M-j> m`o<Esc>``
+nnoremap <M-k> m`O<Esc>``
 
 " greek support via keymap
 map <leader>km :set keymap=greek_utf-8<CR>
 map <leader>kn :set keymap=<CR>
+
 
 " change directory to documents
 :nnoremap <leader>ia :cd ~/workspace/iawriter<cr>
@@ -720,6 +721,7 @@ nmap ,, :e.<CR>
 
 map <leader>fi :setlocal foldmethod=indent<cr>
 map <leader>fs :setlocal foldmethod=syntax<cr>
+map <leader>fm :setlocal foldmethod=marker<cr>
 
 "-------------------------------
 " Janus Mappings
