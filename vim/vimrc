@@ -624,19 +624,9 @@ set ignorecase                    " searches are case insensitive...
 set smartcase                     " ... unless they contain at least one capital letter
 set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,.sass-cache,*.class,*.scssc
 
-
-
-set complete=.,w,b,u,U
+set complete=.,w,b,u,t,i,U,s,k
 set completeopt=menu,preview
 
-"set complete=.,b,u,],t,s,k
-"set complete=.,w,b,u,U,]
-
-"with Thesaurus
-"set complete+=s
-
-"dictionary
-" set complete+=k
 
 " -----------------
 " Wildmenu settings
@@ -675,12 +665,12 @@ autocmd FileType xml imap <buffer> <M-D-.> </<C-X><C-O>
 "When you’re pressing Escape to leave insert mode in the terminal, it will by default take a second or another keystroke to leave insert mode completely and update the statusline. If you find this annoying, you can add the following snippet to your vimrc to escape insert mode immediately:
 
 if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
 endif
 
 " }}}
