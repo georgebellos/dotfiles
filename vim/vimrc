@@ -687,7 +687,8 @@ map <leader>. :bn<cr>
 
 " open current directory in iterm
 :nnoremap <leader>it :!open -a iTerm .<cr>
-":nnoremap <leader>ir :!open -a iTerm :p:h:h<cr>
+:nnoremap <leader>if :!open .<cr>
+:nnoremap <leader>im :!open -a Macvim .<cr>
 
 " edit .vimrc file
 :nnoremap <leader>ev :edit $MYVIMRC<cr>
