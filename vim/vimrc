@@ -692,7 +692,10 @@ map <leader>. :bn<cr>
 
 " edit .vimrc file
 :nnoremap <leader>ev :edit $MYVIMRC<cr>
-:nnoremap <leader>eg :edit $MYGVIMRC<cr>
+:nnoremap <leader>eg :vsplit $MYGVIMRC<cr>
+:nnoremap <leader>et :vsplit ~/.tmux.conf<cr>
+:nnoremap <leader>ez :vsplit ~/.zshrc<cr>
+:nnoremap <leader>en :vsplit ~/.zshenv<cr>
 
 " source .vimrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
