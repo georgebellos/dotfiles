@@ -1029,6 +1029,54 @@ nnoremap <silent> <Leader>gu :Git pull<CR>
 " Exit a diff by closing the diff window
 nnoremap <silent> <Leader>gx :wincmd h<CR>:q<CR>
 
+" ---------------
+" startify settings
+" ---------------
+
+" bookmarks
+let g:startify_bookmarks = [ '~/workspace/iAwriter/Log.md', '~/workspace/projects/rails/katikia/Gemfile' ]
+
+" change directory when open a file or bookmark
+let g:startify_change_to_dir = 1
+
+" change directory when open a file or bookmark is under git
+let g:startify_change_to_vcs_root = 1
+
+let g:startify_files_number        = 8
+
+" update sessions on close
+let g:startify_session_persistence = 1
+
+let g:startify_session_autoload    = 1
+
+let g:startify_list_order = [
+      \ ['   Bookmarks:'],
+      \ 'bookmarks',
+      \ ['   LRU:'],
+      \ 'files',
+      \ ['   sessions:'],
+      \ 'sessions'
+      \ ]
+
+let g:startify_skiplist = [
+      \ 'COMMIT_EDITMSG',
+      \ $VIMRUNTIME .'/doc',
+      \ 'bundle/.*/doc',
+      \ '.vimgolf',
+      \ ]
+let g:startify_custom_footer =
+      \ map(split(system('tips | cowsay `random_quote`' ), '\n'), '"   ". v:val') + ['']
+
+let g:startify_session_dir = '~/.vim/sessions'
+
+hi StartifyBracket ctermfg=240
+hi StartifyNumber  ctermfg=215
+hi StartifyPath    ctermfg=245
+hi StartifySlash   ctermfg=240
+hi StartifySpecial ctermfg=240
+hi StartifyHeader  ctermfg=114
+hi StartifyFooter  ctermfg=240
+hi StartifyFile    ctermfg=111
 
 "----------------
 "    Gist
