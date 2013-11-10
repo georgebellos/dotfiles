@@ -1554,7 +1554,11 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 "Run coffee files
-autocmd FileType coffee noremap<D-r> :CoffeeRun<cr>
+autocmd FileType coffee noremap<D-r> <ESC>:CoffeeRun %<cr>
+autocmd FileType coffee inoremap<D-r> :CoffeeRun %<cr>
+
+" Ctags settings for coffeescript
+let g:tlist_coffee_settings = 'coffee;f:function;v:variable,c:class'
 
 "Compile to javascript in a vertical buffer
 let coffee_compile_vert = 1
