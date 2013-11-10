@@ -950,7 +950,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+  nnoremap <silent> <C-m> :nohlsearch<CR><C-L>
 endif
 
 " }}}
@@ -960,7 +960,7 @@ endif
 " Ack - Command-Shift-F on OSX
 " ----------------------------
 
-"use with ag
+"use with ag with silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 map <D-F> :Ack<space>
@@ -1011,6 +1011,7 @@ let g:airline_section_c="%t"
 let g:airline_section_x=""
  "put filetype in fifth section
 let g:airline_section_y="%Y"
+
 
 " ---------------
 "    Fugitive
@@ -1426,11 +1427,13 @@ let g:ctrlp_funky_ruby_modules = 1
 " around block ruby
 " text object for ruby blocks
 " http://vimcasts.org/blog/2010/12/a-text-object-for-ruby-blocks/
+" text object for ruby blocks
 " https://github.com/kana/vim-textobj-user
 if has("autocmd")
   filetype indent plugin on
 endif
 runtime macros/matchit.vim      "Also require the matchit.vim
+au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
 au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
 au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_and_gems
 " }}}
