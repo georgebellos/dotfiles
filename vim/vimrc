@@ -13,7 +13,7 @@ if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
 
-set shell=/usr/local/bin/zsh
+set shell=$SHELL
 
 " }}}
 " Plugins via Vundle --------------------------------------------------- {{{
