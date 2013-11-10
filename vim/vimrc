@@ -715,6 +715,7 @@ map <leader>kn :set keymap=<CR>
 
 " change colorscheme to iawriter
 :nnoremap <leader>ic :colorscheme iawriter<cr>
+:nnoremap <leader>iu :colorscheme ulysses<cr>
 
 " open explorer
 nmap ,, :e.<CR>
@@ -849,18 +850,6 @@ else
   imap <A-]> <Esc>>>i
   imap <A-[> <Esc><<i
 
-  " Bubble single lines
-  "nmap <C-Up> [e
-  "nmap <C-Down> ]e
-  "nmap <C-k> [e
-  "nmap <C-j> ]e
-
-  " Bubble multiple lines
-  "vmap <C-Up> [egv
-  "vmap <C-Down> ]egv
-  "vmap <C-k> [egv
-  "vmap <C-j> ]egv
-
   " Make shift-insert work like in Xterm
   map <S-Insert> <MiddleMouse>
   map! <S-Insert> <MiddleMouse>
@@ -894,6 +883,8 @@ cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
+"insert new live above(emac binding)
+imap <M-o> <Esc>o
 
 "--------------------
 "" File types
