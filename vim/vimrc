@@ -939,7 +939,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 
-" Use <C-L> to clear the highlighting of :set hlsearch.
+" Use <C-M> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-m> :nohlsearch<CR><C-L>
 endif
@@ -1033,12 +1033,12 @@ let g:startify_change_to_dir = 1
 " change directory when open a file or bookmark is under git
 let g:startify_change_to_vcs_root = 1
 
-let g:startify_files_number        = 8
+let g:startify_files_number= 8
 
-" update sessions on close
-let g:startify_session_persistence = 1
+" dont update sessions on close
+let g:startify_session_persistence = 0
 
-let g:startify_session_autoload    = 1
+let g:startify_session_autoload = 1
 
 let g:startify_list_order = [
       \ ['   Bookmarks:'],
@@ -1444,7 +1444,7 @@ let g:dash_map = {
 
 
 " Thumbnail plugin setting
-nnoremap <Leader>m :Thumbnail<cr>
+noremap <Leader>m :Thumbnail<cr>
 
 "CtrlPFunky settings
 "Jump to function via ctrlp.vim interface
@@ -1472,7 +1472,7 @@ if has("autocmd")
   filetype indent plugin on
 endif
 runtime macros/matchit.vim      "Also require the matchit.vim
-au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
+
 au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_tags
 au BufRead,BufNewFile *.rb setlocal tags+=~/.vim/tags/ruby_and_gems
 " }}}
