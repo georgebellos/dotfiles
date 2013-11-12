@@ -55,6 +55,10 @@ if executable('ctags')
   Bundle 'majutsushi/tagbar'
 endif
 
+" vim + tmux + iterm
+" Vitality restores the FocusLost and FocusGained autocommand functionality. Now Vim can save when iTerm 2 loses focus, even if it's inside tmux!
+" It also handles switching the cursor to a bar shaped one when in insert mode, and restoring it when not.
+Bundle 'sjl/vitality.vim'
 
 " almost a shell
 "Bundle 'ervandew/screen'
@@ -509,13 +513,13 @@ highlight lCursor guifg=white guibg=red    " different color cursor for greek ke
 
 " Use a bar-shaped cursor for insert mode, even through tmux.
 " tmux cursor bar shaped cursor for insert mode
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
+" if exists('$TMUX')
+"   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" else
+"   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" endif
 
 
 " Visual
