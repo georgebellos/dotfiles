@@ -981,9 +981,30 @@ noremap H ^
 noremap L $
 vnoremap L g_
 "use with ag with silver searcher
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" toggles the quickfix window.
+command! -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+  if exists("g:qfix_win") && a:forced == 0
+    cclose
+  else
+    execute "Copen!"
+  endif
+endfunction
 
-map <D-F> :Ack<space>
+" used to track the quickfix window
+augroup QFixToggle
+ autocmd!
+ autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
+ autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
+augroup END
+
+let g:jah_Quickfix_Win_Height=20
+nnoremap <leader><F5> :QFix<CR>
+
+"open cwindow automatically on errors
+autocmd QuickFixCmdPost * nested cwindow | redraw!
+
+" }}}
 map <leader>f :Ack<space>
 
 
