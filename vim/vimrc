@@ -960,12 +960,12 @@ function! NumberToggle()
   endif
 endfunc
 
-" }}}
-" Plugin Configuration--------------------------------------------------- {{{
+" Toggle folds with space
+nnoremap <Space> za
+vnoremap <Space> za
 
-" ----------------------------
-" Ack - Command-Shift-F on OSX
-" ----------------------------
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
 
 "use with ag with silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
