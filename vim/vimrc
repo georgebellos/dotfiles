@@ -948,6 +948,18 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-m> :nohlsearch<CR><C-L>
 endif
 
+" Toggle relative line number
+function! NumberToggle()
+  if(&relativenumber)
+    set norelativenumber
+    set number
+  else
+    "" Uncomment the following to display a '0' instead of the line number
+    " set nonumber
+    set relativenumber
+  endif
+endfunc
+
 " }}}
 " Plugin Configuration--------------------------------------------------- {{{
 
