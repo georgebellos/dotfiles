@@ -976,6 +976,10 @@ nnoremap g\; g\;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
 
+" Easier to type, and I never use the default behavior.
+noremap H ^
+noremap L $
+vnoremap L g_
 "use with ag with silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
