@@ -1,15 +1,17 @@
-# add all gems in the global gemset to the $LOAD_PATH so they can be used even
-# in places like 'rails console'.
+# Load gems on rails console that are not on the gemfile
+
+GEMS = %{pry interactive_editor awesome_print hirb yard}
+gems_to_add = Regexp.new(GEMS.gsub(" ", "|"))
+
 if defined?(::Bundler)
-  global_gemset = ENV['GEM_PATH'].split(':').grep(/ruby.*@global/).first
-  if global_gemset
-    all_global_gem_paths = Dir.glob("#{global_gemset}/gems/*")
-    all_global_gem_paths.each do |p|
-      gem_path = "#{p}/lib"
-      $LOAD_PATH << gem_path
-    end
+  all_gems_path = ENV["_ORIGINAL_GEM_PATH"].split(':').first
+
+  Dir.glob("#{all_gems_path}/gems/*") do |path|
+    $LOAD_PATH << "#{path}/lib" if path =~ gems_to_add
   end
+  $LOAD_PATH
 end
+
 
 require 'pry-doc'
 require 'pry-debugger'
@@ -50,9 +52,6 @@ if defined? Hirb
   end
   Hirb.enable
 end
-
-require 'bond'
-Bond.start
 
 # view source on ruby methods
 # http://pragmaticstudio.com/blog/2013/2/13/view-source-ruby-methods
