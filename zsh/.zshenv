@@ -1,5 +1,9 @@
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
-export PATH=$PATH:/~/dotfiles/bin
+PATH=$HOME/dotfiles/bin
+
+PATH=./bin:$PATH
+
+PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+
 export EDITOR='vim -f'
 
 #node libraries picked up via brew
