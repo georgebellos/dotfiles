@@ -980,7 +980,7 @@ nnoremap <c-o> <c-o>zz
 noremap H ^
 noremap L $
 vnoremap L g_
-"use with ag with silver searcher
+
 " toggles the quickfix window.
 command! -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
@@ -1005,6 +1005,16 @@ nnoremap <leader><F5> :QFix<CR>
 autocmd QuickFixCmdPost * nested cwindow | redraw!
 
 " }}}
+" Plugin Configuration--------------------------------------------------- {{{
+
+" ----------------------------
+" Ack - Command-Shift-F on OSX
+" ----------------------------
+
+"use with ag with silver searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+map <D-F> :Ack<space>
 map <leader>f :Ack<space>
 
 
