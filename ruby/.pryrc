@@ -63,3 +63,4 @@ def source_for(object, method)
 end
 
 require 'readline'
+Pry.config.editor = 'vim'
