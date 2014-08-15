@@ -40,9 +40,25 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump brew rvm gem git git-flow redis-cli ruby lein cake cap node npm wakeonlan hub heroku osx pow rails3)
+plugins=(autojump brew rvm gem git git-flow redis-cli ruby lein cake cap node npm wakeonlan hub heroku osx pow rails cabal mix pod tmuxinator thor themes rsync postgres vagrant capistrano chruby coffee docker gitignore knife mix pip pod powder powify rand-quote sudo vundle xcode)
 
 source $ZSH/oh-my-zsh.sh
 
 # disable autocorrection
 unsetopt correct_all
+
+# Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# hit ctrl + z instead of fg
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
