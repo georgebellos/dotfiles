@@ -686,7 +686,7 @@ endif
 " Mapping ------------------------------------------------------------ {{{
 
 "The default leader is '\', but many people prefer ',' as it's in a standard location
-let mapleader=","
+let mapleader="\<Space>"
 
 "next buffer via leader .
 map <leader>. :bn<cr>
