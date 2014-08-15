@@ -1100,7 +1100,7 @@ let g:startify_change_to_dir = 1
 " change directory when open a file or bookmark is under git
 let g:startify_change_to_vcs_root = 1
 
-let g:startify_files_number= 8
+let g:startify_files_number= 4
 
 " dont update sessions on close
 let g:startify_session_persistence = 0
