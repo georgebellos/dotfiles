@@ -692,7 +692,7 @@ let mapleader="\<Space>"
 map <leader>. :bn<cr>
 
 " preview markdown files with Marked app
-:nnoremap <leader>om :silent !open -a Marked.app '%:p'<cr>
+:nnoremap <leader>om :silent !open -a Marked\ 2.app '%:p'<cr>
 
 " open current directory in iterm
 :nnoremap <leader>it :!open -a iTerm .<cr>
