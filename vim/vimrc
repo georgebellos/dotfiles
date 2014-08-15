@@ -1425,7 +1425,7 @@ ruby <<EOF
     if url = line[re]
       system("open", url)
       VIM::message(url)
-    elsif m && m[1] == "Bundle"
+    elsif m && m[1] == "Plugin"
       system("open", "http://github.com/" + m[2].to_s)
       VIM::message(url)
     elsif m && m[1] == "gem"
