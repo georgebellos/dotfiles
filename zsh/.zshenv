@@ -6,6 +6,8 @@ PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/bin:/bin
 
 export EDITOR='vim -f'
 
+# datomic
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
 #node libraries picked up via brew
 export NODE_PATH=/usr/local/lib/node_modules
 
@@ -39,4 +41,4 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 
 # change automatically ruby implementation
 source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.0.0-p353
+chruby ruby-2.1.2
