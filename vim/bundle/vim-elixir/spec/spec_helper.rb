@@ -6,6 +6,9 @@ module Support
     content = write_file(string)
 
     @vim.edit file
+    # remove all indentation
+    @vim.normal 'ggVG999<<'
+    # force vim to indent the file
     @vim.normal 'gg=G'
     @vim.write
 
@@ -13,7 +16,7 @@ module Support
   end
 
   def assert_correct_syntax(syntax, cursor, string)
-    content = write_file(string)
+    write_file(string)
 
     @vim.edit file
     @vim.search cursor
@@ -22,7 +25,7 @@ module Support
   end
 
   def assert_incorrect_syntax(type, cursor, string)
-    content = write_file(string)
+    write_file(string)
 
     @vim.edit file
     @vim.search cursor
@@ -44,7 +47,7 @@ module Support
   def file_content(string)
     whitespace = string.scan(/^\s*/).first
     string.split("\n").map { |line|
-      line.gsub /^#{whitespace}/, ''
+      line.gsub(/^#{whitespace}/, '')
     }.join("\n").strip
   end
 
