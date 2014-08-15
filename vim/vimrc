@@ -622,7 +622,7 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 " Remove trailing whitespaces and ^M chars
-autocmd FileType ruby,objc,objcpp,coffee,javascript,scheme,clojure,c,scss,css,html,eruby,markdown,elixir,haskell,erlang,vimrc,cpp,java,python,xml,yaml,text,txt autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType ruby,objc,swift,coffee,javascript,scheme,clojure,scss,css,html,eruby,markdown,md,mkd,elixir,haskell,erlang,vim,cpp,java,python,xml,yaml,text autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " }}}
 "   Searching  & Completion ----------------------------------------------------- {{{
