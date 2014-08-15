@@ -931,13 +931,15 @@ endif
 
 "set filetypes like textmate
 command! FR set filetype=ruby
-command! FC set filetype=coffee
-command! FCL set filetype=clojure
-command! FJ set filetype=javascript
 command! FO set filetype=objc
-command! FH set filetype=haskell
+command! FS set filetype=swift
+command! FC set filetype=coffee
+command! FJ set filetype=javascript
+command! FCL set filetype=clojure
+command! FJA set filetype=java
 command! FE set filetype=elixir
 command! EL set filetype=erlang
+command! FH set filetype=haskell
 command! FM set filetype=markdown
 command! FN set filetype=
 
