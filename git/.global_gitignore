@@ -63,6 +63,7 @@ tmp
 .powenv
 Procfile.development
 db/seeds.rb
+db/*.sqlite3
 public/uploads
 # YARD artifacts
 .yardoc
@@ -76,3 +77,7 @@ tags
 custom_plan.rb
 zeus.json
 erd.pdf
+
+.sass-cache/
+.app_store/
+_deploy.yml
