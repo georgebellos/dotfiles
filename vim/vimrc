@@ -968,8 +968,8 @@ function! NumberToggle()
 endfunc
 
 " Toggle folds with space
-" nnoremap <Space> za
-" vnoremap <Space> za
+nnoremap <Space>j za
+vnoremap <Space>j za
 
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
