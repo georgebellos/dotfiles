@@ -1,6 +1,6 @@
 # Load gems on rails console that are not on the gemfile
 
-GEMS = %{pry interactive_editor awesome_print hirb yard}
+GEMS = %{pry interactive_editor awesome_print hirb yard coolline coderay}
 gems_to_add = Regexp.new(GEMS.gsub(" ", "|"))
 
 if defined?(::Bundler)
@@ -14,11 +14,19 @@ end
 
 
 require 'pry-doc'
-require 'pry-debugger'
-require 'pry-exception_explorer'
+# require 'pry-debugger'
+# require 'pry-exception_explorer'
 require 'pry-remote'
 require 'pry-stack_explorer'
+#require 'pry-byebug'
 require 'interactive_editor'
+require 'pry'
+require 'interactive_editor'
+require 'awesome_print'
+require 'hirb'
+require 'yard'
+require 'coolline'
+require 'coderay'
 
 begin
   require 'awesome_print'
@@ -58,7 +66,7 @@ end
 
 def source_for(object, method)
   location = object.method(method).source_location
-  `mate #{location[0]} -l #{location[1]}`
+  `mvim #{location[0]} -l #{location[1]}`
   location
 end
 
