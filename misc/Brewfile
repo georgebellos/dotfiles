@@ -1,0 +1,95 @@
+# Make sure using latest Homebrew
+update
+
+# Update already-installed formula
+upgrade
+
+install coreutils
+# echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+
+
+# Add Repository
+tap homebrew/versions || true
+tap phinze/homebrew-cask || true
+
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+install findutils
+
+install wget --enable-iri
+install zsh
+install tree
+install rename
+install ack
+install ag
+install ctags
+install colordiff
+
+install webkit2png
+install zopfli
+install pigz
+install contacts
+
+install lynx
+
+install macvim
+install autojump
+install curl
+install the_silver_searcher
+install mutt
+
+install git-flow
+install tig
+install hub
+install gitsh
+
+install tmux
+install reattach-to-user-namespace
+
+install ruby-install
+install chgems
+install chruby
+install readline
+
+install elixir
+install leiningen
+install scheme48
+install node
+install phantomjs
+install haskell-platform
+install python
+
+install graphviz
+install imagemagick
+
+install sqlite
+install postgresql
+# install mysql
+install redis
+install riak
+install datomic
+install neo4j
+install elasticsearch
+install rabbitmq
+install s3cmd
+install zeromq
+install graphviz
+install tokyo-cabinet
+install tree
+
+tap homebrew/versions
+tap phinze/homebrew-cask
+install brew-cask
+
+
+brew cask install iterm2
+brew cask install the-unarchiver
+brew cask install dropbox
+brew cask install google-chrome
+brew cask install virtualbox
+brew cask install transmission
+brew cask install vlc
+
+
+# Remove outdated versions
+cleanup
